@@ -1,0 +1,9 @@
+sidebar:
+  menu:
+    post: '[btn.blog](/)'
+    wiki: '[btn.wiki](/wiki/)'
+    notes: '[笔记](/notes/)'
+    more: '[更多](/about/)'
+open_graph:
+  enable: true
+  twitter_id: # for open_graph meta
