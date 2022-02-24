@@ -1,5 +1,7 @@
 华为云配置docker UI & Nginx
 
+记录一下配置的过程
+
 ```shell
 chsh -s /bin/zsh
 vim .zshrc
