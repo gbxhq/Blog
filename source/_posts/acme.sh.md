@@ -1,4 +1,11 @@
-泛域名证书
+---
+title: 泛域名证书的自动部署方案
+date: 2022-02-21 20:48:40
+categories: WebSite
+tags: [SSL,Web,acme]
+---
+
+泛域名证书的简单记录
 
 ```
 cd .acme.sh
