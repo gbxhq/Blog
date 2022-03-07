@@ -1,8 +1,8 @@
 ---
 title: Gin记录
 date: 2020-02-11 16:53:49
-categories:
-tags:
+categories: Go
+tags: [Go,Gin]
 ---
 
 

@@ -1,8 +1,8 @@
 ---
 title: vue组件传值
 date: 2020-03-08 21:32:39
-categories:
-tags:
+categories: [WebSite]
+tags: [FE,Vue]
 ---
 
 
