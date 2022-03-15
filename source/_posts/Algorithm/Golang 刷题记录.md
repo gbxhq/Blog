@@ -5,16 +5,12 @@ categories: [Algorithm]
 tags: [Go,Algorithm]
 ---
 
-> 再刷洛谷试炼场，发现试炼场已经无了。开始以为找不到了，知乎上看到站长的回复才知道真的无了。我是从这个人整理的版本里刷的：
+> 再刷洛谷试炼场，发现试炼场已经无了。开始以为找不到了，知乎上看到站长的回复才知道真的无了。我是从这个人整理的版本里刷的：https://www.luogu.com.cn/paste/66uuuvdr 用 Go 大概刷了 10 道题之后，放弃洛谷。原因是洛谷几乎都是 C++选手。然后继续用 Go 在 LeetCode 刷题。遇到什么写什么吧。纯纯的笔记。非专题性内容。
 >
-> https://www.luogu.com.cn/paste/66uuuvdr
 
-大概刷了 10 道题之后，放弃洛谷。
+<!--more-->
 
-原因是里面几乎都是 C++选手，遇到一些解不了的case实在不知道 Go 是哪里 A 不过的。
-
-
-# 输入输出
+## 输入输出
 
 > 才发现用 go 刷题连输入输出都不会
 
@@ -22,7 +18,7 @@ tags: [Go,Algorithm]
 
 - `fmt.print` 在golang中 是属于标准输出流,一般使用它来进行屏幕输出.
 
-# 处理字符串
+## 处理字符串
 
 ```go
 func replaceSpace(s string) string {
@@ -37,11 +33,9 @@ func replaceSpace(s string) string {
 	return res.String()
 }
 ```
-- [03. 数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/)
+- [03. 数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/) 交换法
 
-交换法
-
-# 快慢指针
+## 快慢指针
 
 快指针在前面探路，慢指针满足条件再走。
 
@@ -53,7 +47,7 @@ eg. 删除数组、链表中的重复元素
 
 更优：遇到非 0，就交换。这样 0 会被不停地往后换。
 
-# 前缀和
+## 前缀和
 
 快速算区间和
 
@@ -95,9 +89,7 @@ Sum(nums[i]--nums[j]) =  preSum[j+1]-preSum[i]
   
   ```
 
-
-
-# 查分数组
+## 差分数组
 
 频繁对区间进行删减的情况
 
@@ -115,9 +107,9 @@ Sum(nums[i]--nums[j]) =  preSum[j+1]-preSum[i]
 
 [1109.航班预订统计](https://leetcode-cn.com/problems/corporate-flight-bookings)
 
-# 回文
+## 回文
 
-# 二分
+## 二分
 
 直接二分搜索
 
@@ -133,13 +125,13 @@ for i<=j { //1. <=
 
 [34.在排序数组中查找元素的第一个和最后一个位置（中等）](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
-## 二分变形
+### 二分变形
 
 通过二分查找试出最佳值
 
 - 取整技巧：` (x + n -1)/n == int(ceil(x/n))`
 
-# 滑动窗口
+## 滑动窗口
 
 我写的滑动窗口有思想问题
 
@@ -149,7 +141,7 @@ for i<=j { //1. <=
 
 每次外循环 i++时 删除 map 里的前一个元素 `delete(m, s[i-1])`
 
-# container
+## container
 
 go 里没有栈。但container 包里的 list、heap和 ring 也勉强够用。
 
@@ -157,7 +149,7 @@ go 里没有栈。但container 包里的 list、heap和 ring 也勉强够用。
 
 下面遇到某个 container 就整理一下
 
-## list
+### list
 
 链表就是一个有 prev 和 next 指针的数组了。它维护两个 type，( 注意，这里不是 interface)
 
