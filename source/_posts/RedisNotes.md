@@ -1,6 +1,6 @@
 ---
-title: Redis学习记录
-date: 2022-02-27 16:12:14
+title: Redis记录
+date: 2021-02-27 16:12:14
 tags: Redis
 ---
 

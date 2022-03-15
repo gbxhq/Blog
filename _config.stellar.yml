@@ -9,7 +9,7 @@ stellar:
 
 ######## head tags ########
 open_graph:
-  enable: true
+  enable: false
   twitter_id: # for open_graph meta
 
 
@@ -26,7 +26,7 @@ sidebar:
   # Sidebar widgets
   widget_layout:
     index: [welcome, recent] # for home/wiki/categories/tags/archives/404 pages
-    page: [welcome, toc] # for pages using 'layout:page'
+    page: [] # for pages using 'layout:page'
     post: [toc, repo_info] # for pages using 'layout:post'
     wiki: [toc, repo_info, wiki_more] # for pages using 'layout:wiki'
   widgets:
@@ -39,16 +39,22 @@ sidebar:
     toc:
       layout: toc
       list_number: false
-      min_depth: 2
+      min_depth: 1
       max_depth: 5
       fallback: recent # Use a backup widget when toc does not exist.
     # welcome
     welcome:
       layout: markdown
-      title: Welcome
+      title: [x-s]
       content: | # support markdown
-        **Golang**开发
-        [博客](https://xuanshan.vercel.app)|[全栈作品](https://xydh.fun)
+        > **博客**
+        > [*ixs.im*](https://ixs.im) | [*vercel源*](https://xuanshan.vercel.app)
+       
+        >  **全栈作品** [*xydh.fun*](https://xydh.fun) 
+        > 后端 `Gin+Mysql+Redis`
+        > 前端 `Vue.js+ElementUI`
+        > 运维 `Nginx+Docker`
+
 
 
 
@@ -61,20 +67,20 @@ article:
   # 如果没有指定封面，是否根据 tags 作为关键词搜索封面？
   auto_cover: false # search from https://source.unsplash.com/
   # 如果没有指定 excerpt 和 description，将自动取多长的内容作为文章摘要？
-  auto_excerpt: 200
+  auto_excerpt: 0
   # 分类颜色
   category_color:
     '新闻稿': '#DA0F47'
   # 文章许可协议
-  license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
+  license: '[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
   # 分享
-  share: # [wechat, weibo, email, link]
+  share: [wechat, weibo, email, link]
   # 相关文章，需要安装插件 (for layout: post)
   # npm i hexo-related-popular-posts
   related_posts:
     enable: false
     max_count: 5
-    auto_cover: true # 如果没有封面就根据 tags 作为关键词搜索封面，开了此项将不会自动从文章中提取首张图片作为封面了。
+    auto_cover: false # 如果没有封面就根据 tags 作为关键词搜索封面，开了此项将不会自动从文章中提取首张图片作为封面了。
 
 
 
@@ -146,11 +152,11 @@ footer:
     #   icon: '<img src="https://cdn.jsdelivr.net/gh/cdn-x/placeholder@1.0.3/social/942ebbf1a4b91.svg"/>'
     #   url: /about/#comments
   sitemap:
-    # '博客':
-    #   - '[近期](/)'
-    #   - '[分类](/)'
-    #   - '[标签](/)'
-    #   - '[归档](/)'
+    '博客':
+      - '[近期](/)'
+      - '[分类](/categories/)'
+      - '[标签](/tags/)'
+      - '[归档](/archives/)'
     # '项目':
     #   - '[开源库](/)'
     # '社交':
@@ -159,7 +165,7 @@ footer:
     # '更多':
     #   - '[关于本站](/)'
     #   - '[GitHub](/)'
-  license: '[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
+  license: #'[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)'
   source: #'[GitHub](https://github.com/xaoxuu/hexo-theme-stellar)'
   more: # string or array (support markdown)
 
@@ -245,6 +251,7 @@ plugins:
 
   # 赫蹏 (Heti) - 专为中文网页内容设计的排版样式增强
   # https://github.com/sivan/heti
+  # 不要开这个，开了代码全部会居中！！！
   heti:
     enable: false
     css: https://unpkg.com/heti/umd/heti.min.css

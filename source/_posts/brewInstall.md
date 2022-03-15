@@ -1,5 +1,5 @@
 ---
-title: Homebrew安装
+title: Homebrew相关
 date: 2020-11-23 22:16:21
 categories:
 tags:
@@ -37,14 +37,12 @@ curl: (7) Failed to connect to raw.githubusercontent.com port 443: Operation tim
 
 上面脚本中使用了中科大镜像来加速访问。
 
-安装使用到的脚本源码在此 [homebrew-install](https://link.zhihu.com/?target=https%3A//github.com/ineo6/homebrew-install) ，仅修改了仓库地址部分，不会产生安全隐患，另外求 star 。
+安装使用到的脚本源码在此 [homebrew-install](github.com/ineo6/homebrew-install) ，仅修改了仓库地址部分
 
 ------
 
 > 官方脚本无法使用的原因是[http://raw.githubusercontent.com](https://link.zhihu.com/?target=http%3A//raw.githubusercontent.com)访问很不稳定，我上面提供的方案里是采用了jsdelivr CDN加速访问。
 > 另外也可以采用写入hosts的方式，可以一定程度解决GitHub资源无法访问的问题，我也写了一篇操作文章，有需要可以阅读下。
-
-[ineo6：解决GitHub网页githubusercontent地址无法访问问题zhuanlan.zhihu.com![图标](https://pic1.zhimg.com/v2-ad9ed1bedf8fe606480686e08dac4aa4_180x120.jpg)](https://zhuanlan.zhihu.com/p/107691233)
 
 ## 2. 安装说明
 
@@ -191,32 +189,35 @@ BREW_REPO = "https://mirrors.ustc.edu.cn/brew.git".freeze
 
 ## 参考文章
 
-- [清华大学开源软件镜像站](https://link.zhihu.com/?target=https%3A//mirror.tuna.tsinghua.edu.cn/help/homebrew/)
-- [科大源](https://link.zhihu.com/?target=http%3A//mirrors.ustc.edu.cn/help/brew.git.html%23)
+- [清华大学开源软件镜像站](mirror.tuna.tsinghua.edu.cn/help/homebrew/)
+- [科大源](mirrors.ustc.edu.cn/help/brew.git.html%23)
 
-## 如果对您有帮助
 
-请给我一个赞⭐️，让更多人能发现文章，这也是对我的认可和鼓励。
 
-------
+# brew 安装 redis 和 mysql
 
-## 广告插播
+## mysql
 
-`GitMaster`可以树形展示`git`项目代码。
+1. 安装homebrew
+2. brew install mysql 安装mysql
 
-- 代码树支持`GitHub`、`GitLab`、`Gitee`
-- ️ 支持私有部署页面，一键标记
-- ️ 文件提交历史可视化 `git history`
-- `GitHub`通知提醒功能
-- ⬇️ 支持`GitHub`文件、目录下载
+安装完成之后，可以运行命令启动mysql服务
 
-![img](https://pic4.zhimg.com/80/v2-59d3a51e7c84e2a19f87ed0a8246c293_1440w.jpg)
+```
+mysql.server start
+```
 
-- [Chrome Web Sore](https://link.zhihu.com/?target=https%3A//chrome.google.com/webstore/detail/git-master/klmeolbcejnhefkapdchfhlhhjgobhmo)
-- [Edge Web Store](https://link.zhihu.com/?target=https%3A//microsoftedge.microsoft.com/addons/detail/pcpkfgepcjdmdfelbabogmgoadgmiocg)
+然后输入命令设置密码
 
-------
+```
+mysql_secure_installation
+```
 
-> 本文首发博客: [mac下镜像飞速安装Homebrew教程](https://link.zhihu.com/?target=http%3A//idayer.com/mac-install-homebrew-by-cdn/)
+设置完成之后，进入mysql服务
 
-[http://weixin.qq.com/r/1XVlfVnEGQRmrR0e9yDH](https://link.zhihu.com/?target=http%3A//weixin.qq.com/r/1XVlfVnEGQRmrR0e9yDH) (二维码自动识别)
+```
+mysql -uroot -p
+Enter password:
+```
+
+## redis
