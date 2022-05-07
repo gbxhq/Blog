@@ -1,5 +1,5 @@
 ---
-title: MacLiveSettingNote
+title: Mac 直播、录屏问题记录
 date: 2022-05-05 15:39:09
 tags: [Mac]
 ---
