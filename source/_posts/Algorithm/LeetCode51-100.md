@@ -2,7 +2,7 @@
 title: LeetCode51-100
 date: 2018-11-21 10:13:23
 categories: Algorithm
-tags: [LeetCode,Cpp]
+tags: [LeetCode,Cpp,Algorithm]
 ---
 
 `int的范围、牛顿迭代法`[[69]](#69x 的平方根)      `copy(1.begin,1.end,2.begin)、rbegin\rend`[[88]](#88合并两个有序数组)
@@ -144,10 +144,11 @@ return tmp.size();
 
 正常向的用途，就是老老实实求零点。
 
-但是还有一些东西可以用牛顿迭代做，例如求$\sqrt[m]a$。  
-显然很难求，所以令$x=\sqrt[m]a$，令$f(x)= x^m =a$。 
+但是还有一些东西可以用牛顿迭代做，例如求 $\sqrt[m]a$。  
 
-显然$f\prime(x)=m\times x^{m-1}$。然后就可以牛顿迭代出解了。
+显然很难求，所以令 $x=\sqrt[m]a$ ，令$f(x)= x^m =a$。 
+
+显然 $f\prime(x)=m\times x^{m-1}$ 。然后就可以牛顿迭代出解了。
 
 ### 程序
 

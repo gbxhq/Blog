@@ -15,11 +15,9 @@ tags: [FE,Vue]
 
 　　我们的场景是在父组件点击按钮弹出子组件，子组件里对数据进行编辑操作以后通知父组件操作完成。弹窗效果是框架自带的，这里只说一下组件之间如何传值。
 
-　　子组件：dtls.vue
+　　子组件: dtls.vue
 
 　　父组件: Service.vue
-
-　　
 
 ------
 
@@ -27,7 +25,7 @@ tags: [FE,Vue]
 
 　　导入以后添加到当前vue的实例里，如图：
 
-　　![img](https://img2018.cnblogs.com/blog/784108/201905/784108-20190506143159736-1337913029.png)
+　　![img](https://cdn.jsdelivr.net/gh/gbxhq/Pic/784108-20190506143159736-1337913029.png)
 
 　  父页面调用的时候直接使用名称做的标签即可：<dtls></dtls>
 
@@ -39,15 +37,15 @@ tags: [FE,Vue]
 
 　　到这一步父组件的事就完成了，该子组件接收值了：
 
-　　![img](https://img2018.cnblogs.com/blog/784108/201905/784108-20190506143956370-1656976391.png)
+　　![img](https://cdn.jsdelivr.net/gh/gbxhq/Pic/784108-20190506143956370-1656976391.png)
 
 　　在子组件的实例里通过props来获取我在父组件传递的editObject对象，这个时候，子组件已经取得了editObject的值。注意，此时不必再在子组件里定义一个editObject对象，传递过来的参数editObject已经是当前子组件的一个对象了，按正常使用即可，比如我要在子组件的页面上显示具体的值：
 
-　　![img](https://img2018.cnblogs.com/blog/784108/201905/784108-20190506144251988-480523364.png)
+　　![img](https://cdn.jsdelivr.net/gh/gbxhq/Pic/784108-20190506144251988-480523364-20220524195401570.png)
 
 　　通过:model就能绑定值，下面访问的时候，v-model即可：
 
-　　![img](https://img2018.cnblogs.com/blog/784108/201905/784108-20190506144346628-1225045443.png)
+　　![img](https://cdn.jsdelivr.net/gh/gbxhq/Pic/784108-20190506144346628-1225045443.png)
 
 　　由于label标签无法 v-model赋值，所以通过{{对象.属性}}即可显示具体字段值。
 
@@ -55,7 +53,7 @@ tags: [FE,Vue]
 
 　　首先我们在子组件的某个操作完成事件里（比如保存方法的最后一行）定义一个函数并携带上一个对象作为参数：this.$emit('Success', "OK")，图示：
 
-　　![img](https://img2018.cnblogs.com/blog/784108/201905/784108-20190506144754329-1329003539.png)
+　　![img](https://cdn.jsdelivr.net/gh/gbxhq/Pic/784108-20190506144754329-1329003539.png)
 
 　　Success你可以理解为回调函数名，这个是子组件自定义的一个名称，$emit方法可以理解为定义一个回调函数名称，并传递一个实参，可以是任何字符串、数组、或者对象。我这里只需传个OK字符串。
 
@@ -63,11 +61,11 @@ tags: [FE,Vue]
 
 　　现在我们回到父组件的页面上，在dtls标签上加上事件绑定：v-on:Success="Success"，完整的dtls标签如下：
 
-　　![img](https://img2018.cnblogs.com/blog/784108/201905/784108-20190506145317096-158364349.png)
+　　![img](https://cdn.jsdelivr.net/gh/gbxhq/Pic/784108-20190506145317096-158364349.png)
 
 　　最后一步，在父组件里定义一个函数，名为Success：
 
-　　![img](https://img2018.cnblogs.com/blog/784108/201905/784108-20190506145406910-583735274.png)
+　　![img](https://cdn.jsdelivr.net/gh/gbxhq/Pic/784108-20190506145406910-583735274.png)
 
 　　同理，父组件里的函数名可以和子组件不同，等号左边和右边应该是分别对应一个，我这里没必要写成不一样的，就没去尝试了，大家有自己需求的可以试试。
 
@@ -78,5 +76,3 @@ tags: [FE,Vue]
 作者：[ 默卿](https://www.cnblogs.com/sunshine-wy/)
 
 出处：https://www.cnblogs.com/sunshine-wy/p/10819652.html
-
-本站使用「[CC BY 4.0](https://creativecommons.org/licenses/by/4.0)」创作共享协议，转载请在文章明显位置注明作者及出处。

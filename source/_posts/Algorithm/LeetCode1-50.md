@@ -2,7 +2,7 @@
 title: LeetCode 1-50题
 date: 2018-09-01 14:33:54
 categories: Algorithm
-tags: [Cpp,LeetCode]
+tags: [Cpp,LeetCode,Algorithm]
 ---
 
 知识点：`Hash、双指针`[1]     `int的范围`[7]     `stack、ascii`[20] 

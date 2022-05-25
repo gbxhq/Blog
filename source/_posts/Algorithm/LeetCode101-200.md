@@ -2,7 +2,7 @@
 title: LeetCode 101-200
 date: 2018-09-06 14:30:53
 categories: [Algorithm]
-tags: [Cpp,LeetCode]
+tags: [Cpp,LeetCode,Algorithm]
 ---
 
 知识点：  `摩尔投票算法`[169]   `reverse()的理解`[189]     `位运算`[136](#136只出现一次的数字)   `string.erase()`[171]     

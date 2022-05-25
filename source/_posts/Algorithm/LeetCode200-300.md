@@ -2,7 +2,7 @@
 title: LeetCode 200-300
 date: 2019-3-10 19:07:02
 categories: [Algorithm]
-tags: [Cpp,LeetCode]
+tags: [Cpp,LeetCode,Algorithm]
 ---
 
 知识点：`npos`[345] 、`memset`[387] 、  `reverse()`[557](#557反转字符串中的单词III)、   `istringstream`[557](#557反转字符串中的单词III)、`树`[606]、`to_string()`[788]、`transform()`[819]、`strA.find(strB) != string:npos`[#686]

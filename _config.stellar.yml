@@ -20,6 +20,7 @@ sidebar:
     title: '[config.title](/)' # you can set html tag like: '[<img no-lazy height="32px" src="xxx"/>](/)'
   menu:
     post: '[btn.blog](/)'
+    wiki: '[手册](/wiki/)'
     # wiki: '[btn.wiki](/wiki/)'
     # friends: '[友链](/friends/)'
     about: '[关于](/about/)'
@@ -77,64 +78,64 @@ article:
   share: [wechat, weibo, email, link]
   # 相关文章，需要安装插件 (for layout: post)
   # npm i hexo-related-popular-posts
-  related_posts:
-    enable: false
-    max_count: 5
-    auto_cover: false # 如果没有封面就根据 tags 作为关键词搜索封面，开了此项将不会自动从文章中提取首张图片作为封面了。
+  # related_posts:
+  #   enable: false
+  #   max_count: 5
+  #   auto_cover: false # 如果没有封面就根据 tags 作为关键词搜索封面，开了此项将不会自动从文章中提取首张图片作为封面了。
 
 
 
 ######## Comments ########
-comments:
-  service: # beaudar, utterances, valine, twikoo
-  # beaudar
-  # https://beaudar.lipk.org/
-  beaudar:
-    repo: xxx/xxx
-    issue-term: pathname
-    issue-number:
-    theme: preferred-color-scheme
-    label:
-    input-position: top # top/bottom 评论框位置
-    comment-order: desc # desc 排序
-    keep-theme: # true/false
-    loading: false
-    branch: main
-  # utterances
-  # https://utteranc.es/
-  utterances:
-    repo: xxx/xxx
-    issue-term: pathname
-    issue-number:
-    theme: preferred-color-scheme
-    label:
-  valine:
-    js: https://cdn.jsdelivr.net/gh/XuxuGood/simple-blog-cdn@main/js/Valine.min.js
-    appId: # your appId
-    appKey: # your appKey
-    placeholder:
-    requiredFields: [nick, mail]
-    enableQQ: true # Unstable avatar link
-    recordIP: false # Record commenter IP
-    avatar: robohash # gravatar style https://valine.js.org/avatar
-    pageSize: 10 # comment list page size
-    lang: zh-cn
-    highlight: true
-    mathJax: false
-    tagMeta: [博主, 小伙伴, 访客] # 标签要显示的文字,默认'博主,小伙伴,访客'
-    metaPlaceholder:
-      nick: "昵称/QQ号(必填)"
-      mail: "邮箱（必填，完全保密）"
-      link: "网址(https://)"
-    master: #md5加密后的博主邮箱
-      - 6783037F2DF30EAB99F9FC256157D875
-    friends: #md5加密后的小伙伴邮箱
-      - 6783037F2DF30EAB99F9FC256157D875
-  # Twikoo
-  # https://twikoo.js.org/
-  twikoo:
-    js: https://cdn.jsdelivr.net/npm/twikoo@1.4.0/dist/twikoo.all.min.js # 建议锁定版本
-    envId: https://xxx # vercel函数
+# comments:
+#   service: # beaudar, utterances, valine, twikoo
+#   # beaudar
+#   # https://beaudar.lipk.org/
+#   beaudar:
+#     repo: xxx/xxx
+#     issue-term: pathname
+#     issue-number:
+#     theme: preferred-color-scheme
+#     label:
+#     input-position: top # top/bottom 评论框位置
+#     comment-order: desc # desc 排序
+#     keep-theme: # true/false
+#     loading: false
+#     branch: main
+#   # utterances
+#   # https://utteranc.es/
+#   utterances:
+#     repo: xxx/xxx
+#     issue-term: pathname
+#     issue-number:
+#     theme: preferred-color-scheme
+#     label:
+#   valine:
+#     js: https://cdn.jsdelivr.net/gh/XuxuGood/simple-blog-cdn@main/js/Valine.min.js
+#     appId: # your appId
+#     appKey: # your appKey
+#     placeholder:
+#     requiredFields: [nick, mail]
+#     enableQQ: true # Unstable avatar link
+#     recordIP: false # Record commenter IP
+#     avatar: robohash # gravatar style https://valine.js.org/avatar
+#     pageSize: 10 # comment list page size
+#     lang: zh-cn
+#     highlight: true
+#     mathJax: false
+#     tagMeta: [博主, 小伙伴, 访客] # 标签要显示的文字,默认'博主,小伙伴,访客'
+#     metaPlaceholder:
+#       nick: "昵称/QQ号(必填)"
+#       mail: "邮箱（必填，完全保密）"
+#       link: "网址(https://)"
+#     master: #md5加密后的博主邮箱
+#       - 6783037F2DF30EAB99F9FC256157D875
+#     friends: #md5加密后的小伙伴邮箱
+#       - 6783037F2DF30EAB99F9FC256157D875
+#   # Twikoo
+#   # https://twikoo.js.org/
+#   twikoo:
+#     js: https://cdn.jsdelivr.net/npm/twikoo@1.4.0/dist/twikoo.all.min.js # 建议锁定版本
+#     envId: https://xxx # vercel函数
 
 ######## Footer ########
 footer:

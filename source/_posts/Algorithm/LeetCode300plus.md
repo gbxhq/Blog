@@ -2,7 +2,7 @@
 title: LeetCode 300题以后
 date: 2018-09-10 19:07:02
 categories: [Algorithm]
-tags: [Cpp,LeetCode]
+tags: [Cpp,LeetCode,Algorithm]
 ---
 
 知识点：`npos`[345] 、`memset`[387] 、  `reverse()`[557]、   `istringstream`[557]、`树`[606]、`to_string()`[788]、`transform()`[819]、`strA.find(strB) != string:npos`[686]
