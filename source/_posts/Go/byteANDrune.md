@@ -1,5 +1,5 @@
 ---
-title: byte 和 rune
+title: Go 里的 byte 和 rune 对比
 date: 2021-01-18
 categories: Note
 tags: [Go,Note]

@@ -1,8 +1,14 @@
 ---
-title: UbuntuSSH
+title: Ubuntu 开启 ssh
 date: 2022-05-09 10:56:49
 tags: [Linux,Ubuntu]
 ---
+
+软路由装了 Win10、我寻思 Win10 里不是内置一个 WSL 的 Ubuntu 么，这样我就不用软路由再开一个 Linux 了。
+
+结果这 Ubuntu ssh 连不上，原来默认都没有开启的。
+
+<!---more--->
 
 # 切换源
 
