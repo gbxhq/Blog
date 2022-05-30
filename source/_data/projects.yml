@@ -16,7 +16,7 @@ Redis:
   tags: [中间件,数据库]
   cover: true
   logo:
-    src: https://cdn.jsdelivr.net/gh/gbxhq/Pic/redislogo.png
+    src: https://cdn.jsdelivr.net/gh/gbxhq/Pic/logo/redis.png
     small: 112px
     large: 240px
   description:  都是为了快。
@@ -27,7 +27,7 @@ Golang:
   tags: Golang
   cover: true
   logo:
-    src: https://cdn.jsdelivr.net/gh/gbxhq/Pic//golang.png
+    src: https://cdn.jsdelivr.net/gh/gbxhq/Pic/logo/golang.png
     small: 112px
     large: 240px
   description: GMP 模型您整明白了不？
