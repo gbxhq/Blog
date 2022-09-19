@@ -4,6 +4,10 @@ wiki: Golang # 这是项目名
 title: Golang
 ---
 
+# Go 文档
+
+https://gobyexample-cn.github.io/
+
 # 引用传递
 
 Go语言中所有的传参都是值传递（传值），都是一个副本，一个拷贝。因为拷贝的内容有时候是非引用类型（int、string、struct等这些），这样就在函数中就无法修改原内容数据；有的是引用类型（指针、map、slice、chan等这些），这样就可以修改原内容数据。

@@ -251,9 +251,23 @@ if ele.Prev() == nil {
 		}
 ```
 
+## heap
 
+- 注意，heap 只是保证顶部是最小。不会保证按顺序输出是最小
 
+- 实现 interface 时只需要注意 Pop() 方法的写法 ，比如最简单的 []int 类型：
 
+  ```go
+  func (p *PriorityQ) Pop() interface{} {
+  	n := len(*p)
+  	old := *p
+  	x := old[n-1]
+  	*p = old[:n-1]
+  	return x
+  }
+  ```
+
+  
 
 # 单调栈、单调队列
 

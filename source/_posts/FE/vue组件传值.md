@@ -76,3 +76,14 @@ tags: [FE,Vue]
 作者：[ 默卿](https://www.cnblogs.com/sunshine-wy/)
 
 出处：https://www.cnblogs.com/sunshine-wy/p/10819652.html
+
+
+
+# 子组件调用父组件的方法：
+
+```js
+onChangeNav(){
+    this.$parent.switchNav()
+},
+```
+

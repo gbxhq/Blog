@@ -36,3 +36,5 @@ sshd: no hostkeys available -- exiting.
 解决：
 
 `ssh-keygen -A`
+
+` passwd root`
