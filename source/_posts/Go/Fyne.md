@@ -1,3 +1,14 @@
+---
+title: Go UI 框架 Fyne 使用
+date: 2020-01-19
+categories: Note
+tags: [Go,Note]
+---
+
+> 给紫玉写了一个工具方便她处理Excel，之前一直是黑框的，需要她自己复制数据进去计算，最近有时间于是使用Fyne写了个界面。
+> 记录下 Fyne 使用遇到的问题。总体来说可以满足简单的图形需求。
+
+
 # mac交叉编译win报错
 
 ```
@@ -18,10 +29,13 @@ gcc_libinit_windows.c:7:10: fatal error: 'windows.h' file not found
 
 成功
 
-
 # Fyne解决中文乱码
 
-## 第一种方式
+## 配置字体
+
+配置字体有两种方式 
+
+### 第一种方式
 
 **1.安装官方的 cmd 工具**
 
@@ -41,12 +55,14 @@ go get fyne.io/fyne/cmd/fyne
 fyne bundle fonts.ttf >> bundle.go
 ```
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/44940310ec034a81a570c94d89ca537b.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmVndWxhdGlvbnM=,size_20,color_FFFFFF,t_70,g_se,x_16)
-
 **4.需要创建一个 theme 目录 把 bundle.go 放入其中**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/b8bebda0cc6c45219ef98a890cb55283.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmVndWxhdGlvbnM=,size_20,color_FFFFFF,t_70,g_se,x_16)
-**5.修改 bundle.go 文件 把 package 和 import 修改成指定格式后保存 见下图：**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/9f9282a9ca3f433d803277f9a7fdf9ed.png?x-oss-process=image/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBAUmVndWxhdGlvbnM=,size_19,color_FFFFFF,t_70,g_se,x_16)
+**5.修改 bundle.go 文件 **把 package 和 import 处理下
+
+```go
+package theme
+import "fyne.io/fyne/v2"
+```
+
 **6.在 theme 文件夹新建 theme.go 文件 并添加以下代码**
 
 ```go
@@ -88,16 +104,12 @@ func (*MyTheme) Size(n fyne.ThemeSizeName) float32 {
 
 ------
 
-## 第二种方式
+### 第二种方式
 
 **1.在项目中新建一个 theme 目录**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/2f1f7224dc284dc8b74ccc62a3f5033d.png)
 **2.在 theme 文件夹中 新建 fonts 目录**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/c55c785047584b8e8c64cb5514cf73d8.png)
-
 **3.把下载的 ttf 格式的字体文件放置到 fonts 目录中**
-![在这里插入图片描述](https://img-blog.csdnimg.cn/ae5798647e1e4e1fbdd1c0265a75573d.png)
-4.在 theme 目录中 新建 theme.go 文件
+**4.在 theme 目录中 新建 theme.go 文件**
 
 ```go
 package theme
