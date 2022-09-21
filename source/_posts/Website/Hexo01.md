@@ -78,7 +78,7 @@ src="//music.163.com/outchain/player?type=2&id=544918737&auto=1&height=66">
 </iframe>
 ```
 
-看来Hexo是支持`iframe`的
+是支持`iframe`的
 
 > 支持嵌入HTML
 
@@ -126,5 +126,4 @@ Example:
 Note: `<repository url>,[branch]`   中 `,`后不要跟空格直接根branch名。
 
 最终还是把域名绑在了Coding。速度快多了。
-
 

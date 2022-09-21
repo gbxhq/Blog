@@ -456,18 +456,5 @@ function stopTimer(){
 
 ## History对象、Location对象、Screen对象
 
-不写了
-
-
-# 插曲
-写这篇文章的时候。竟然一直 hexo g 报错。
-说是文章内容的错误。
-
-我整了一晚上没找着哪有问题。
-
-最后[强哥](https://www.aimoon.site)来给删了个空格就好了。乖乖。
-
-感谢强哥！
-
 
 

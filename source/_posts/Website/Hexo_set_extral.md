@@ -1,5 +1,5 @@
 ---
-title: Hexo渲染时设置例外
+title: Hexo 渲染时设置例外
 date: 2018-04-01 11:21:41
 categories: Website
 tags: Hexo
@@ -35,5 +35,3 @@ skip_render:
     - 'demo/*.html'
     - 'demo/**'
 ```
-哈哈。明年主机不用续费了。
-

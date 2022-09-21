@@ -1,5 +1,5 @@
 ---
-title: Hexo建分支Push源文件到仓库
+title: Hexo Push 源文件到仓库
 date: 2018-11-09 08:50:09
 categories: Website
 tags: [Hexo,git]
