@@ -80,7 +80,7 @@ type MyTheme struct{
 
 var _ fyne.Theme = (*MyTheme)(nil)
 
-// resourceNotoSansSCTtf 对应的是 bundle.go 中的变量名
+// resourceNotoSansSCTtf 对应的是 bundle.go 中的变量名!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 func (m MyTheme) Font(fyne.TextStyle) fyne.Resource {
     
 	return resourceNotoSansSCTtf

@@ -2,3 +2,7 @@
 
 xydh.fun/cs
 
+IDE Plugin
+
+-  Rainbow Brackets 彩虹括号
+- 
