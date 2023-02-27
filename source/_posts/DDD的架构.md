@@ -1,3 +1,10 @@
+---
+title: DDD 架构
+date: 2020-01-19
+categories: DDD
+tags: [DDD]
+---
+
 # 端口和适配器架构
 
 port&adapter。也叫六边形架构

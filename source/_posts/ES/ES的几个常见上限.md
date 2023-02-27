@@ -1,3 +1,11 @@
+---
+title: ES 几个常见的上限
+date: 2020-01-19
+categories: ElasticSearch
+tags: [ElasticSearch,ES]
+---
+
+
 1、单个索引的字段数量上限
 参数：index.mapping.total_fields.limit
 阈值：1000

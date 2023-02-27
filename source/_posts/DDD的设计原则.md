@@ -1,3 +1,10 @@
+---
+title: DDD 设计原则
+date: 2020-01-19
+categories: DDD
+tags: [DDD]
+---
+
 # 认识领域模型元素
 
 ## DDD里的模型元素

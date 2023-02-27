@@ -1,3 +1,10 @@
+---
+title: DDD 初学
+date: 2020-01-19
+categories: DDD
+tags: [DDD]
+---
+
 DDD
 
 贫血失忆症

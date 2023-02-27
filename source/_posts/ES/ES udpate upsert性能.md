@@ -1,3 +1,11 @@
+---
+title: ES update/upsert 性能
+date: 2020-01-19
+categories: ElasticSearch
+tags: [ElasticSearch,ES]
+---
+
+
 原文 https://elasticsearch.cn/question/10881
 
 问题是

@@ -1,3 +1,11 @@
+---
+title: ES 删除字段
+date: 2020-01-19
+categories: ElasticSearch
+tags: [ElasticSearch,ES]
+---
+
+
 # es删除字段
 
 [![img](https://upload.jianshu.io/users/upload_avatars/20803889/06ccb157-7e9e-4f36-8f59-65f37832772d.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp)](https://www.jianshu.com/u/6d5b80cdfe5d)

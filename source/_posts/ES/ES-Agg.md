@@ -1,3 +1,9 @@
+---
+title: ES Agg 聚合
+date: 2020-01-19
+categories: ElasticSearch
+tags: [ElasticSearch,ES]
+---
 
 
 使用cate去聚合
@@ -8,7 +14,7 @@
   "aggs": {
     "group_by_tags": {
       "terms": {
-        "field": "cate",
+        "field": "cat",
         "size": 50
       }
     }
