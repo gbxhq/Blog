@@ -37,18 +37,20 @@ tags: [ElasticSearch,ES]
 
 ```json
 {
+"_source":["bid","aiop_tag"],
+"track_total_hits":true,
   "query": {
     "bool": {
       "must": [
         {
           "nested": {
-            "path": "new_tag",
+            "path": "aiop_tag",
             "query": {
               "bool": {
                 "must": [
                   {
                     "term": {
-                      "new_tag.id": "666"
+                      "aiop_tag.option_id": "408"
                     }
                   }
                 ],

@@ -90,7 +90,22 @@ interact
 
 ## 改用zsh
 
+## zsh 安装最新版本
+
+### 更新 zsh >= 5.4
+
+从 https://sourceforge.net/projects/zsh/files/zsh/ 下载对应的 zsh 版本，使用如下代码编译安装：
+
+```plain
+tar -xvf zsh-5.8.tar.xz
+cd zsh-5.8
+./configure --prefix=/home/xxxxx/zsh-5.8 #设置安装路径
+make && make install
+```
+
 `chsh -s /bin/zsh`  (默认使用bash) 
+
+使用命令：在终端窗口中键入 `echo $0`，然后按回车键。这将显示当前正在运行的 Shell 的名称
 
 ## 添加alias
 
@@ -122,6 +137,8 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 ### 配置主题：
 
 修改`~/.zshrc`文件的 `ZSH_THEME=""` 属性为`"agnoster"`
+
+0----- 建议直接搜 p10k 用这个主题
 
 ### 改字体
 
