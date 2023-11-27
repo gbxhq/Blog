@@ -8,7 +8,6 @@ tags: [Go,Note]
 > 给紫玉写了一个工具方便她处理Excel，之前一直是黑框的，需要她自己复制数据进去计算，最近有时间于是使用Fyne写了个界面。
 > 记录下 Fyne 使用遇到的问题。总体来说可以满足简单的图形需求。
 
-
 # mac交叉编译win报错
 
 ```
@@ -69,9 +68,9 @@ import "fyne.io/fyne/v2"
 package theme
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/theme"
-	"image/color"
+    "fyne.io/fyne/v2"
+    "fyne.io/fyne/v2/theme"
+    "image/color"
 )
 
 
@@ -82,23 +81,23 @@ var _ fyne.Theme = (*MyTheme)(nil)
 
 // resourceNotoSansSCTtf 对应的是 bundle.go 中的变量名!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 func (m MyTheme) Font(fyne.TextStyle) fyne.Resource {
-    
-	return resourceNotoSansSCTtf
+
+    return resourceNotoSansSCTtf
 }
 
 func (*MyTheme) Color(n fyne.ThemeColorName, v fyne.ThemeVariant) color.Color {
-    
-	return theme.DefaultTheme().Color(n, v)
+
+    return theme.DefaultTheme().Color(n, v)
 }
 
 func (*MyTheme) Icon(n fyne.ThemeIconName) fyne.Resource {
-    
-	return theme.DefaultTheme().Icon(n)
+
+    return theme.DefaultTheme().Icon(n)
 }
 
 func (*MyTheme) Size(n fyne.ThemeSizeName) float32 {
-    
-	return theme.DefaultTheme().Size(n)
+
+    return theme.DefaultTheme().Size(n)
 }
 ```
 
@@ -115,15 +114,15 @@ func (*MyTheme) Size(n fyne.ThemeSizeName) float32 {
 package theme
 
 import (
-	_ "embed"
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/theme"
-	"image/color"
+    _ "embed"
+    "fyne.io/fyne/v2"
+    "fyne.io/fyne/v2/theme"
+    "image/color"
 )
 
 var (
-	//go:embed fonts/NotoSansSC.ttf
-	NotoSansSC []byte
+    //go:embed fonts/NotoSansSC.ttf
+    NotoSansSC []byte
 )
 
 type MyTheme struct{
@@ -131,29 +130,29 @@ type MyTheme struct{
 
 var _ fyne.Theme = (*MyTheme)(nil)
 
-//	StaticName 为 fonts 目录下的 ttf 类型的字体文件名
+//    StaticName 为 fonts 目录下的 ttf 类型的字体文件名
 func (m MyTheme) Font(fyne.TextStyle) fyne.Resource {
-    
-	return &fyne.StaticResource{
-    
-		StaticName:    "NotoSansSC.ttf",
-		StaticContent: NotoSansSC,
-	}
+
+    return &fyne.StaticResource{
+
+        StaticName:    "NotoSansSC.ttf",
+        StaticContent: NotoSansSC,
+    }
 }
 
 func (*MyTheme) Color(n fyne.ThemeColorName, v fyne.ThemeVariant) color.Color {
-    
-	return theme.DefaultTheme().Color(n, v)
+
+    return theme.DefaultTheme().Color(n, v)
 }
 
 func (*MyTheme) Icon(n fyne.ThemeIconName) fyne.Resource {
-    
-	return theme.DefaultTheme().Icon(n)
+
+    return theme.DefaultTheme().Icon(n)
 }
 
 func (*MyTheme) Size(n fyne.ThemeSizeName) float32 {
-    
-	return theme.DefaultTheme().Size(n)
+
+    return theme.DefaultTheme().Size(n)
 }
 ```
 
@@ -165,28 +164,28 @@ func (*MyTheme) Size(n fyne.ThemeSizeName) float32 {
 package main
 
 import (
-	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/widget"
-	"fyne/src/theme"	// fyne是我的项目路径
+    "fyne.io/fyne/v2/app"
+    "fyne.io/fyne/v2/container"
+    "fyne.io/fyne/v2/widget"
+    "fyne/src/theme"    // fyne是我的项目路径
 )
 
 func main() {
-    
-	a := app.New()
-	a.Settings().SetTheme(&theme.MyTheme{
+
+    a := app.New()
+    a.Settings().SetTheme(&theme.MyTheme{
     })
-	w := a.NewWindow("你好")
+    w := a.NewWindow("你好")
 
-	hello := widget.NewLabel("你好 Fyne!")
-	w.SetContent(container.NewVBox(
-		hello,
-		widget.NewButton("嗨!", func() {
-    
-			hello.SetText("欢迎 :)")
-		}),
-	))
+    hello := widget.NewLabel("你好 Fyne!")
+    w.SetContent(container.NewVBox(
+        hello,
+        widget.NewButton("嗨!", func() {
 
-	w.ShowAndRun()
+            hello.SetText("欢迎 :)")
+        }),
+    ))
+
+    w.ShowAndRun()
 }
 ```

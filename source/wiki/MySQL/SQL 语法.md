@@ -14,7 +14,7 @@ Structured Query Language 结构化查询语言
 ## 基础语法
 
 > |   表示 在可选项中选择一个
->
+> 
 > [ ] 表示这个参数可选
 
 - ALTER TABLE
@@ -158,13 +158,13 @@ SET columname = value , ...
 ### 字符串
 
 - CHAR
-    - 1-255个字符的定长字符串。长度必须在创建时规定。
+  - 1-255个字符的定长字符串。长度必须在创建时规定。
 - NCHAR
-    - CHAR的特殊形式。用来支持多字节或Unicode字符。
+  - CHAR的特殊形式。用来支持多字节或Unicode字符。
 - TEXT (也称 LONG\MEMO\VARCHAR)
-    - 变长文本
+  - 变长文本
 - NVARCHAR
-    - TEXT的特殊形式。
+  - TEXT的特殊形式。
 
 ### 数值
 
@@ -184,7 +184,7 @@ SET columname = value , ...
 - DATETIME 日期时间
 - SMALLDATETIME 日期时间精确到分
 - TIME 时间
-  
+
 # 检索数据
 
 - SELECT * `*`选择所有
@@ -193,15 +193,15 @@ SET columname = value , ...
 ## 限制结果
 
 返回前5行
+
 - MySQL PostgreSQL SQLite MariaDB
     SELECT xxx FROM xxx LIMIT 5;
 
 - 进阶：LIMIT 后跟两个参数
-
-    ```sql
-    LIMIT 10,2 -- 从第10个往后输出2个。输出的是 11 和 12
-    ```
-
+  
+  ```sql
+  LIMIT 10,2 -- 从第10个往后输出2个。输出的是 11 和 12
+  ```
 
 # 注释
 
@@ -227,6 +227,7 @@ ORDER BY 3,2; --3就是grade 2就是name 。对应于SELECT第一句
 ## 排序方向：
 
 默认升序[A~Z] ，改降序：
+
 ```sql
 ORDER BY grade DESC
 #多个属性想降序，必须对每一列都进行声明！
@@ -237,9 +238,9 @@ ORDER BY grade DESC, name  --name就是升序(ASC)排列
 
 WHERE 子句操作符：
 
-| = 等于          | > 大于 | >= 或 !< 大于等于  | BEWTEEN AND在指定值之间 |
-| --------------- | ------ | ------------------ | ----------------------- |
-| <> 或 != 不等于 | < <=   | <= 或  !> 小于等于 | IS NULL 为NULL          |
+| = 等于        | > 大于 | >= 或 !< 大于等于  | BEWTEEN AND在指定值之间 |
+| ----------- | ---- | ------------- | ----------------- |
+| <> 或 != 不等于 | < <= | <= 或  !> 小于等于 | IS NULL 为NULL     |
 
 # 高级过滤
 
@@ -253,7 +254,7 @@ AND级别比OR高。 如果需要改变顺序，请加括号：
 
 ```sql
 WHERE (name = 'XiaoMing' OR name = 'XiaoHong')
-	AND grade = 100;
+    AND grade = 100;
 ```
 
 ## IN操作符
@@ -333,7 +334,7 @@ SELECT Concat(name, ' (', classId, ')')
 ```
 
 > TRIM 函数 去某个字段的空格
->
+> 
 > LTRIM() 去掉字符左边的空格  RTRIM()右边   TRIM()两边
 
 ## 使用别名
@@ -357,14 +358,14 @@ SELECT quantity, price, quantity*price AS Pay
 - AVG() 返回列的平均值
 
 - COUNT()返回列的行数
-
+  
   - COUNT(columnName) 对特定的列计数，忽略NULL值
   - COUNT( * ) 表中的行数计数。不论是不是NIULL都计数。
 
 - MAX() MIN()
 
 - SUM() 列值之和
-
+  
   ```sql
   SELECT AVG(price) AS avg_price FROM xxx; --返回平均价格
   ```
@@ -407,9 +408,9 @@ WHERE过滤的只是行，看上去像是分组了。
 HAVING，支持所有WHERE操作符。语法相同。
 
 > 差别：
->
+> 
 > WHERE在分组前进行过滤，过滤掉的行不参与分组。
->
+> 
 > HAVING再对分组后的结果过滤
 
 # 子查询
@@ -421,9 +422,9 @@ HAVING，支持所有WHERE操作符。语法相同。
 ```sql
 SELECT name FROM Stu
 WHERE grade IN (
-    	SELECT grade FROM Stu
-    	WHERE grade > 60
-	);
+        SELECT grade FROM Stu
+        WHERE grade > 60
+    );
 ```
 
 - 作为子查询的SELECT子句只能是单列
@@ -435,15 +436,15 @@ WHERE grade IN (
 
 ```sql
 SELECT name, (
-    	SELECT COUNT(*)
-    	FROM tab1
-    	WHERE tab1.id = tab2.id
-	) AS quantity
+        SELECT COUNT(*)
+        FROM tab1
+        WHERE tab1.id = tab2.id
+    ) AS quantity
 FROM tab2
 ```
 
 - 完全限定列名
-
+  
   两个表里都已id字段，要加前缀的
 
 - 后面学习的JOIN代替上面的方法更有效
@@ -464,7 +465,7 @@ FROM tab1,tab2
 ```sql
 SELECT id, name, grade
 FROM Stu INNER JOIN Quit
-	ON Stu.id = Quit.id
+    ON Stu.id = Quit.id
 ```
 
 等价于
@@ -478,7 +479,7 @@ WHERE Stu.id = Quit.id
 只不过关键词 WHERE 换成 ON
 
 > ANSI SQL规范首选 INNER JOIN 语法
->
+> 
 > 第二种写法是很Low的哦
 
 但第二种写法还可以联结多个表，当然性能会下降
@@ -514,11 +515,11 @@ WHERE grade = (SELECT grade FROM Grade
 SELECT name
 FROM Grade AS g1, Grade AS g2
 WHERE g2.name = '小明' 
-	AND g1.grade = g2.grade
+    AND g1.grade = g2.grade
 ```
 
 > 一般情况下使用[[联结]]比使用[[子查询]]快得多。
->
+> 
 > 当然也可以试用两种方法，以确定哪种性能更好
 
 ## 自然联结
@@ -542,16 +543,14 @@ FROM Stu AS S, tab2, xxxxx
 
 ```sql
 FROM tab1 LEFT OUTER JOIN tab2
-	ON 条件
+    ON 条件
 ```
 
 右外联结 就是 `RIGHT OUTER JOIN`
 
 > **全外联结**  `FULL OUTER JOIN`
->
+> 
 > 带上左右不关联的行全部返回。但是 MySQL  SQLite MariaDB等不支持 FULL OUTER JOIN 的 语法
-
-
 
 # 组合查询
 
@@ -566,9 +565,9 @@ WHERE xxx
 ```
 
 > 上面的例子当然可以用 WHERE 配合 OR 来组合条件完成，
->
+> 
 > 但是当遇到复杂的过滤条件， UNION 处理起来更简单。
->
+> 
 > 性能上的差别，最好是测试以确定更优。
 
 - Note：列的数据类型必须完全兼容。上面我给的例子是完全相同的两个列，实际上，只要类型兼容即可（即 必须是DBMS可以隐含转换的类型）。
@@ -580,9 +579,9 @@ UNOIN 默认会去除重复行。（看上去效果和使用了多个WHERE子句
 如果想返回所有行。请使用 `UNOIN ALL` 关键词。实现合并两个集合而不去重。这样可以解决【用WHERE会去重】的问题。
 
 > **其他UNION**
->
+> 
 > 既然有并集。就还有 差集：`EXCEPT`    交集：`INTERSECT`
->
+> 
 > 但实际上他们很少使用，因为可以用 联结  来得到结果
 
 # 插入数据
@@ -674,9 +673,9 @@ DELETE删除的是【行】。**一定要带上WHERE，不然就删了所有的�
 ```sql
 CREATE TABLE Stu
 (
-    id	CHAR(10)	NOT NULL,
-    name	VARCHAR(254)	NOT NULL,
-    avgGrade	DECIMAL(8,2)	NOT NULL	DEFAULT 0
+    id    CHAR(10)    NOT NULL,
+    name    VARCHAR(254)    NOT NULL,
+    avgGrade    DECIMAL(8,2)    NOT NULL    DEFAULT 0
 );
 ```
 
@@ -726,26 +725,26 @@ Q：定长和变长区别
 
 A: 性能。处理定长比处理变长快得多；许多DBMS不允许变长列进行索引
 
-| 类型                                    | 说明                                                         |
-| --------------------------------------- | ------------------------------------------------------------ |
-| CHAR                                    | 1~255的定长字符串 **长度必须在创建时规定**                   |
-| NCHAR                                   | CHAR的特殊形式  用来支持多字节或Unicode字符（此类型的不同实现变化很大） |
-| TEXT<br />（也称为LONG、MEMO或VARCHAR） | 变长文本                                                     |
-| NVARCHAR                                | TEXT的特殊形式  用来支持多字节或Unicode字符（此类型的不同实现变化很大） |
+| 类型                               | 说明                                         |
+| -------------------------------- | ------------------------------------------ |
+| CHAR                             | 1~255的定长字符串 **长度必须在创建时规定**                 |
+| NCHAR                            | CHAR的特殊形式  用来支持多字节或Unicode字符（此类型的不同实现变化很大） |
+| TEXT<br />（也称为LONG、MEMO或VARCHAR） | 变长文本                                       |
+| NVARCHAR                         | TEXT的特殊形式  用来支持多字节或Unicode字符（此类型的不同实现变化很大） |
 
 > Notice：字符串的值 必须在 单引号内
->
+> 
 > Note: 「不是数值的数字」要保存成字符串，如邮编01234如果保存成数值是1234，丢失一位。应作为字符串保存。
 
 ## 2.数值
 
-| 类型     | 说明                             |
-| -------- | -------------------------------- |
-| BIT      | 0/1                              |
-| DECIMAL  | 定点或精度可变的浮点数           |
-| FLOAT    | 浮点数                           |
+| 类型       | 说明                           |
+| -------- | ---------------------------- |
+| BIT      | 0/1                          |
+| DECIMAL  | 定点或精度可变的浮点数                  |
+| FLOAT    | 浮点数                          |
 | INT      | 4字节整数 -2147483648~2147483647 |
-| REAL     | 4字节浮点数                      |
+| REAL     | 4字节浮点数                       |
 | SMALLINT | 2字节整数 -32768~32767           |
 | TINYINT  | 1字节整数 0~255                  |
 
@@ -753,11 +752,11 @@ A: 性能。处理定长比处理变长快得多；许多DBMS不允许变长列�
 
 ## 3.日期和时间
 
-| 类型          | 说明                             |
-| ------------- | -------------------------------- |
-| DATE          | 日期                             |
-| TIME          | 时间                             |
-| DATETIME      | 日期时间                         |
+| 类型            | 说明               |
+| ------------- | ---------------- |
+| DATE          | 日期               |
+| TIME          | 时间               |
+| DATETIME      | 日期时间             |
 | SMALLDATETIME | 日期时间，精确到分（无秒、毫秒） |
 
 > NOTE: 不同的DBMS格式要参考具体文档
@@ -766,10 +765,9 @@ A: 性能。处理定长比处理变长快得多；许多DBMS不允许变长列�
 
 包含任何数据（图、多媒体、文档） 最不具兼容性
 
-| 类型      | 说明                  |
-| --------- | --------------------- |
+| 类型        | 说明               |
+| --------- | ---------------- |
 | BINARY    | 定长二进制 255B~8000B |
 | VARBINARY | 变长二进制 255B~8000B |
-| RAW       | 定长二进制 最长255B   |
-| LONG RAW  | 变长二进制 最长2GB    |
-
+| RAW       | 定长二进制 最长255B     |
+| LONG RAW  | 变长二进制 最长2GB      |

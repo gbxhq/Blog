@@ -5,28 +5,26 @@ categories: Note
 tags: [Go,Note]
 ---
 
-
-
 <!---more--->
 
 # 基础语法
 
--   编译
+- 编译
+  
+  ```shell
+  go build -o AppName
+  ```
+  
+  跨平台编译
+  
+  ```shell
+  CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
+  CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
+  ```
+  
+  可以用export先把上述变量更改
 
-    ```shell
-    go build -o AppName
-    ```
-
-    跨平台编译
-
-    ```shell
-    CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
-    CGO_ENABLED=0 GOOS=windows GOARCH=amd64 go build
-    ```
-
-    可以用export先把上述变量更改
-
--   `go install`会先执行`go build`然后把build好的可执行文件自动拷到`/bin`目录
+- `go install`会先执行`go build`然后把build好的可执行文件自动拷到`/bin`目录
 
 变量声明以关键字`var`开头，变量类型放在变量的后面，行尾无需分号。 举个例子：
 
@@ -78,15 +76,15 @@ var name, age = "Q1mi", 20
 package main
 
 import (
-	"fmt"
+    "fmt"
 )
 // 全局变量m
 var m = 100
 
 func main() {
-	n := 10
-	m := 200 // 此处声明局部变量m
-	fmt.Println(m, n)
+    n := 10
+    m := 200 // 此处声明局部变量m
+    fmt.Println(m, n)
 }
 ```
 
@@ -96,13 +94,13 @@ func main() {
 
 ```go
 func foo() (int, string) {
-	return 10, "Q1mi"
+    return 10, "Q1mi"
 }
 func main() {
-	x, _ := foo()
-	_, y := foo()
-	fmt.Println("x=", x)
-	fmt.Println("y=", y)
+    x, _ := foo()
+    _, y := foo()
+    fmt.Println("x=", x)
+    fmt.Println("y=", y)
 }
 ```
 
@@ -110,9 +108,9 @@ func main() {
 
 注意事项：
 
-1.  函数外的每个语句都必须以关键字开始（var、const、func等）
-2.  `:=`不能使用在函数外。
-3.  `_`多用于占位，表示忽略值。
+1. 函数外的每个语句都必须以关键字开始（var、const、func等）
+2. `:=`不能使用在函数外。
+3. `_`多用于占位，表示忽略值。
 
 # 常量
 
@@ -156,11 +154,11 @@ const (
 
 ```go
 const (
-		n1 = iota //0
-		n2        //1
-		n3        //2
-		n4        //3
-	)
+        n1 = iota //0
+        n2        //1
+        n3        //2
+        n4        //3
+    )
 ```
 
 ### 几个常见的`iota`示例:
@@ -169,46 +167,46 @@ const (
 
 ```go
 const (
-		n1 = iota //0
-		n2        //1
-		_
-		n4        //3
-	)
+        n1 = iota //0
+        n2        //1
+        _
+        n4        //3
+    )
 ```
 
 `iota`声明中间插队
 
 ```go
 const (
-		n1 = iota //0
-		n2 = 100  //100
-		n3 = iota //2
-		n4        //3
-	)
-	const n5 = iota //0
+        n1 = iota //0
+        n2 = 100  //100
+        n3 = iota //2
+        n4        //3
+    )
+    const n5 = iota //0
 ```
 
 定义数量级 （这里的`<<`表示左移操作，`1<<10`表示将1的二进制表示向左移10位，也就是由`1`变成了`10000000000`，也就是十进制的1024。同理`2<<2`表示将2的二进制表示向左移2位，也就是由`10`变成了`1000`，也就是十进制的8。）
 
 ```go
 const (
-		_  = iota
-		KB = 1 << (10 * iota)
-		MB = 1 << (10 * iota)
-		GB = 1 << (10 * iota)
-		TB = 1 << (10 * iota)
-		PB = 1 << (10 * iota)
-	)
+        _  = iota
+        KB = 1 << (10 * iota)
+        MB = 1 << (10 * iota)
+        GB = 1 << (10 * iota)
+        TB = 1 << (10 * iota)
+        PB = 1 << (10 * iota)
+    )
 ```
 
 多个`iota`定义在一行
 
 ```go
 const (
-		a, b = iota + 1, iota + 2 //1,2
-		c, d                      //2,3
-		e, f                      //3,4
-	)
+        a, b = iota + 1, iota + 2 //1,2
+        c, d                      //2,3
+        e, f                      //3,4
+    )
 ```
 
 ## 类型
@@ -219,15 +217,15 @@ const (
 
 ### 字符串的常用操作
 
-|                方法                 |      介绍      |
-| :---------------------------------: | :------------: |
-|              len(str)               |     求长度     |
-|           +或fmt.Sprintf            |   拼接字符串   |
-|            strings.Split            |      分割      |
-|          strings.contains           |  判断是否包含  |
-| strings.HasPrefix,strings.HasSuffix | 前缀/后缀判断  |
+| 方法                                  | 介绍      |
+|:-----------------------------------:|:-------:|
+| len(str)                            | 求长度     |
+| +或fmt.Sprintf                       | 拼接字符串   |
+| strings.Split                       | 分割      |
+| strings.contains                    | 判断是否包含  |
+| strings.HasPrefix,strings.HasSuffix | 前缀/后缀判断 |
 | strings.Index(),strings.LastIndex() | 子串出现的位置 |
-| strings.Join(a[]string, sep string) |    join操作    |
+| strings.Join(a[]string, sep string) | join操作  |
 
 ## byte和rune类型
 
@@ -242,4 +240,3 @@ Go语言中只有强制类型转换，没有隐式类型转换。
 ```bash
 T(表达式)
 ```
-

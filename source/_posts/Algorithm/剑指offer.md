@@ -13,53 +13,65 @@ tags: [Note,Cpp]
 
 # Problems
 
-
 - [ ] P31单例模式
-
-    ```cpp
-    class A{
-    	static A getInstance();
-        void func();
-    private:
-        A();
-        A(A& rth);
-        ~A();
-    };
-    A A::getInstance(){
-        static A a;
-        return a;
-    }
-    ```
+  
+  ```cpp
+  class A{
+      static A getInstance();
+      void func();
+  private:
+      A();
+      A(A& rth);
+      ~A();
+  };
+  A A::getInstance(){
+      static A a;
+      return a;
+  }
+  ```
 
 - [ ] 这个代码啥问题
-
-    ```cpp
-    if(p->left||p->right){
-    	swap(p->left,p->right);
-    }//这样就不行
-    //这样就可以
-    if(p->left||p->right){
-        TreeNode *temp = p->left;
-        p->left = p->right;
-        p->right = temp;
-    }
-    ```
-
+  
+  ```cpp
+  if(p->left||p->right){
+      swap(p->left,p->right);
+  }//这样就不行
+  //这样就可以
+  if(p->left||p->right){
+      TreeNode *temp = p->left;
+      p->left = p->right;
+      p->right = temp;
+  }
+  ```
+  
     看上去一样。但其实 swap两个指针。在里面操作半天。回来p的左右孩子还是没变化。
 
 - [ ] 红黑树    据说和30题有关
+
 - [ ] P75 斐波那契的公式法
+
 - [ ] P82 位运算相关的题目和笔记是薄弱环
+
 - [ ] 24 二刷还是没思路
+
 - [ ] 27 重刷 递归方法
+
 - [x] 30题 解法二回看
+
 - [ ] 35相关题目回看
+
 - [ ] 37 书上方法
+
 - [ ] 39-1 书上方法
+
 - [ ] 39-2 书上方法
+
 - [ ] 40 重刷
+
 - [ ] 41 其实没做出来
+
 - [x] 45 约瑟夫写推导
+
 - [ ] 53 正则匹配
 
 # Notes
@@ -79,11 +91,11 @@ tags: [Note,Cpp]
 - 牛客的没AC。先LeetCode上找了74搜索二维矩阵，这个稍微简单点，用一个二分查找就可以。然后240题搜索二维矩阵II就是一样的了。
 
 - 看书知道了要删减的思路后。就从右上角开始。先排除的列，又排除的行。然后继续用**最笨的方法去查找**（其实也是一步步排除行和列的过程）。没有考虑到：
-
+  
   排除 列 和 行 的过程可以**同时进行**，直到循环结束啊。
 
 - PS:我之前这种思路是错误的：
-
+  
   类似二分查找，先找到要搜的列，再从这一列用二分查找。这样其实有的元素存在，但并不在你要找的这一列。
 
 ## 4替换空格
@@ -151,7 +163,7 @@ int minNumberInRotateArray(vector<int> v) {
 位运算。
 
 - 1不停地执行左移。执行到首位（符号位）不就成了负的？然后再左移不就永远成了负的？
-
+  
   ANS: 左移不会保留符号位。右移才保留
 
 - 位运算效率远高于乘除。尽可能得用位运算代替乘除。
@@ -165,7 +177,9 @@ int minNumberInRotateArray(vector<int> v) {
 Note：
 
 - 用全局变量的方式抛出异常。
+
 - [ ] 由于**底数是double型，不能直接用==判断是否是0**。要专门写一个函数来判断！！！
+
 - [ ] 指数为负的情况！！！
 
 ## 12 打印1到n位最大数
@@ -189,11 +203,11 @@ Note：
 ## 15 链表中倒数第k个节点
 
 - 我这个二傻子。把节点一个个存到栈里。然后出栈到第k个。AC了。
-
+  
   为啥不存到vector里然后用下标就能返回倒数第k个呢。
 
 - 书上的方法，用两个指针，两个相距k，当一个走到尾的时候，另个就是答案了。
-
+  
   - [ ] 这个方法需要重刷。因为要考虑到鲁棒性问题。
 
 ## 16 反转链表
@@ -331,12 +345,13 @@ RandomListNode* Clone(RandomListNode* pHead)
         pHead = pHead->next;
 
     }
-    
+
     return ans->next;
 }
 ```
 
 - 注意第20行的`if(pHead->random)` 之前一直过不了正是由于有的节点没有random指针，为空时自然取不到label值。以后写的时候要思考全面。
+
 - [ ] 用书上的好方法刷一次
 
 ## 27 二叉树与双向链表
@@ -347,47 +362,49 @@ RandomListNode* Clone(RandomListNode* pHead)
 
 思路好想，关键是输入为null的特殊情况我一直没处理。导致过不了。
 
--   [ ] 书上是递归方法。
-
-    ```cpp
-        TreeNode* Convert(TreeNode* pRootOfTree)
-        {
-            if(pRootOfTree == nullptr) return nullptr;
-            TreeNode* pre = nullptr;
-             
-            convertHelper(pRootOfTree, pre);
-             
-            TreeNode* res = pRootOfTree;
-            while(res ->left)
-                res = res ->left;
-            return res;
+- [ ] 书上是递归方法。
+  
+  ```cpp
+      TreeNode* Convert(TreeNode* pRootOfTree)
+      {
+          if(pRootOfTree == nullptr) return nullptr;
+          TreeNode* pre = nullptr;
+  
+          convertHelper(pRootOfTree, pre);
+  
+          TreeNode* res = pRootOfTree;
+          while(res ->left)
+              res = res ->left;
+          return res;
+      }
+  
+      void convertHelper(TreeNode* cur, TreeNode*& pre)
+      {
+          if(cur == nullptr) return;
+  
+          convertHelper(cur ->left, pre);
+  
+          cur ->left = pre;
+          if(pre) pre ->right = cur;
+          pre = cur;
+  
+          convertHelper(cur ->right, pre);
+  ```
+  
         }
-         
-        void convertHelper(TreeNode* cur, TreeNode*& pre)
-        {
-            if(cur == nullptr) return;
-             
-            convertHelper(cur ->left, pre);
-             
-            cur ->left = pre;
-            if(pre) pre ->right = cur;
-            pre = cur;
-             
-            convertHelper(cur ->right, pre);
-             
-             
-             
-        }
-    ```
-
-    
+  
+  ```
+  
+  ```
 
 ## 28 字符串的排列
 
 全排列嘛。我知道要用递归写。可是就是钻进了牛角尖。一时间想不出来递归的参数怎么设置。
 
 - multiset是允许key相同的set
+
 - 输入的string 为`“”`时，要特判！
+
 - [ ] **重要的问题**   写递归的时候函数体是func(string str), 然后在函数里面把传进来的str一个临时的string变量tmp，然后改变 tmp 的值，并把 tmp 传给要递归的函数。
 
 # 第五章 时间空间效率
@@ -395,39 +412,39 @@ RandomListNode* Clone(RandomListNode* pHead)
 ## 29 绝对众数
 
 - 之前刷LeetCode知道有摩尔投票法了。做起来很轻松。
-
+  
   当然这题不一样的就是，可能不存在。要输出0。所以我找到后，又遍历一次判断是不是真的大于 n/2 。效率还是O(N)的
 
 - 看书的解法。快速排序。是时候去复习一下基本的排序了。撤。
-
+  
   ---
 
 - 我们有成熟的O(N)算法得到数组中任意第k大的数字--》partition()
 
 - 刚刚用Partion解法做了一遍。
-
+  
   感觉穿参数的时候有点绕啊，比如找第k大的，坐标是k-1。
-
+  
   然后如果一趟快拍之后的坐标 i<k，说明第k大在i后面，
-
+  
   要传的参数就是 k-i-1;
-
+  
   **综上，我感觉不如在数组前加一个数，放到0位置。这样第k大的数坐标就是k。其他的逻辑也清晰很多。具体是否能行我们在下一题里用一下试试**
 
 ## 30 最小的前k个数
 
 - 先用最low的冒泡AC过了。现在开始去查资料看高端解法~
-
+  
   - 我错了。我用的方法是比冒泡还low的，纯一个一个比较。
 
 - vector初始化要声明空间！
-
+  
   ---
 
 - 用partition的写法试试~
 
 - **事实证明，在vector的0位置加一个垃圾数。然后整个代码写起来就特别清晰了，可以完全按照思路写出：**
-
+  
   ```cpp
   if(i==k)
       return;
@@ -436,12 +453,13 @@ RandomListNode* Clone(RandomListNode* pHead)
   }else
       partition(vt,ii,i-1,k);
   ```
-
+  
   > 如果不在0位置加垃圾数。i就要和k-1做比较，而且k-i那里要写k-i-1
 
 ---
 
 - 输入的k比n还大的时候，要返回空😂
+
 - [ ] 解法二没看哈~有空回来补
 
 ## 31 最小连续子串
@@ -449,17 +467,18 @@ RandomListNode* Clone(RandomListNode* pHead)
 - 先用了暴力（其实可以优化
 
 - 看书，又用了DP。
-
+  
   ---
-
+  
   代码写起来都挺容易的。
 
 ## 32 整数中1出现次数
 
 - 暴力过了。
-- [x] 明天去看书上怎么解的。
-- 书上解法看懵了，搜到这篇博客，不错https://blog.csdn.net/yi_afly/article/details/52012593
 
+- [x] 明天去看书上怎么解的。
+
+- 书上解法看懵了，搜到这篇博客，不错https://blog.csdn.net/yi_afly/article/details/52012593
 
 ## 33 把数组排成最小的数
 
@@ -478,25 +497,25 @@ int main()
 {
     std::string s = "This is an example";
     std::cout << s << '\n';
- 
+
     s.erase(0, 5); // Erase "This "
     std::cout << s << '\n';
- 
+
     s.erase(std::find(s.begin(), s.end(), ' ')); // Erase ' '
     std::cout << s << '\n';
- 
+
     s.erase(s.find(' ')); // Trim from ' ' to the end of the string
     std::cout << s << '\n';
 }
 ```
 
 > 我就不明白最后两种用法。都是传入的一个迭代器。为啥一个是删除迭代器所指的字符，一个是删除迭代器后的所有字符呢？
->
+> 
 > 经测试，直接传一个迭代器进去。也是删除这个字符。
 
 答：string::find()函数返回的是postion。是一个Int坐标。
 
-​	而std::find()返回的是迭代器。
+​    而std::find()返回的是迭代器。
 
 ---
 
@@ -540,13 +559,12 @@ while (i<n){
 }
 ```
 
-
-
 ## 35 第一个只出现一次的字符
 
 - map里存的顺序并不是按你存入的顺序。而是字典序。比如`g`先进入map，e后进入map。但是`e`会放在`g`前面。
 
 - 用map做挺容易。并没有从这题学到啥呢。
+
 - [ ] 相关题目记得回看
 
 ## 36 数组中的逆序对
@@ -554,16 +572,17 @@ while (i<n){
 **本书中遇到的第一道难题。MARK**
 
 - 拿到题先思考：逆序对我记着是组成原理的时候学的来~干啥用来着？
+
 - [ ] 为什么要模1000000007？
 
 ---
 
 - 简单搜一下。https://www.e-learn.cn/content/qita/999143
-
+  
   知识点：**归并排序、线段树、树状数组**
-
+  
   先看这文章吧：https://mudrobot.blog.luogu.org/zong-ni-xu-dui-kai-shi-post
-
+  
   知识点：**线段树、离散化、动态开点**
 
 - 学了下线段树，真的强大。需要去新开一篇博客写啦~
@@ -573,7 +592,7 @@ while (i<n){
 ## 37 链表的公共节点
 
 - [x] 这是为什么？
-
+  
   ```cpp
   ListNode* p1=pHead1,p2=pHead2;//这样就会报错no viable conversion from 'ListNode *' to 'ListNode'
   ```
@@ -640,15 +659,15 @@ int maxDepth(TreeNode* root){
 ## 39-2判断平衡二叉树
 
 - 判断左右深度。延续上题。
-
+  
   看书：我直接延续上题的方法，有缺陷。
 
 - 改进：就是在遍历的同时随时进行判断当前的节点平衡不。如果不平衡就提前返回False。
-
+  
   > 就是说，直接判断左右深度的方法，辣鸡就辣鸡在，他是从上往下的遍历。不能在第一时间发现不平衡的情况，需要**遍历到最下面那层不平衡的层**才知道返回false。而改进就是改成了后序遍历~ Over
-
+  
   写了一下发现，逻辑上还有细节主要注意。
-
+  
   - [ ] 重刷标记
 
 ## 40只出现一次的数字
@@ -657,7 +676,7 @@ int maxDepth(TreeNode* root){
 
 > 做了这题，位运算有了点理解
 
-###  **需要特别注意的！**
+### **需要特别注意的！**
 
 **在写 & | ^这种位运算的运算式的时候，一定要加括号！因为它们的优先级很低。不加括号运算顺序会完全和你想的不一样🙃**
 
@@ -668,7 +687,7 @@ void FindNumsAppearOnce(vector<int> data,int* num1,int *num2) {
     int all=0;
     for(int x:data)
         all ^= x;//all是全部异或的结果
-    
+
     //找到x第一个是1的位（这个位就是 num1和num2 在此位不同所致
     int i=0;
     while (!(all&1)){// &1 就是只保留这个数的最后一位
@@ -687,23 +706,23 @@ void FindNumsAppearOnce(vector<int> data,int* num1,int *num2) {
 ## 41-1和为S的连续序列
 
 - Clion真强啊。我的代码本来这样：
-
+  
   ```cpp
   if((x&1)==0)
       return true;
   return false;
   ```
-
+  
   提示，1，可以简化。2，`x==0`最好写 `0 == x`  3，if(a==b)return true; 建议改成 if(!=)return false; 为啥？
-
+  
   最后改成了`return (x & 1) == 0;`
 
 - ~~开始没考虑输入1的情况。但是我自己分奇数偶数做的，牛客AC了。~~
-
+  
   我自己用的辣鸡方法不要再看！
-
+  
   书上介绍的是尺取法。
-
+  
   尺取法过不了LeetCode 829.因为LeetCode输入数据规模大。必须寻找一个Log_n算法
 
 - [ ] LeetCode标记，参考文章。https://blog.csdn.net/curry3030/article/details/80701612
@@ -722,7 +741,7 @@ Easy。
 ## 42-2翻转单词顺序
 
 - 题倒是简单。光在这处理特殊情况了。
-
+  
   输入都是什么玩意啊，`""` `" "` 这样有意思吗？
 
 - 恶心这道题
@@ -743,7 +762,7 @@ Easy。
 - 自己模拟遍历过的。效率差
 
 - [ ] 记得刷书
-
+  
   公式法的推导，已写[独立文章](https://o--o.win/Algorithm/josephus/)
 
 ## 46特殊法求1-n的和
@@ -751,7 +770,9 @@ Easy。
 自己是绞尽脑汁也没想出来，看书了。
 
 - 用方法1、2刷了一遍
+
 - [ ] 下次再刷，完全不看书，方法1、2自己还能想出来吗？
+
 - [ ] 记得回头还要用方法3、4刷一遍
 
 ## 47不用+-*/做加法
@@ -769,19 +790,18 @@ int Add(int num1, int num2)
 }
 ```
 
-
 ## 48不能被继承的类
 
 - 牛客没有此题
 
 - 常规解法：把构造函数设为私有。
-
+  
   书中说，这样的类，只能得到位于堆上的实例，而得不到位于栈上的实例。
-
+  
   堆，和栈。到底是什么关系呢？
-
+  
   > 大体搜了下。三言两语说不清了。开一片文章记录下吧。
-  >
+  > 
   > [关于堆和栈](../DeferencesbetweenStackandHeap)
 
 - 关于这道题，解法二。我还是懵懵的
@@ -805,14 +825,14 @@ int Add(int num1, int num2)
 过的有点简单啊~有空看书上咋说的吧。继续下一题了。
 
 - 书上果然提供了 O(1) 的算法
--  
+- 
 
 ## 52构建乘积数组
 
 用线段树做，还挺容易的。不过看这题通过率这么高，应该不用这么复杂。所以记得去看书上怎么做。
 
 - [ ] 刷书
-
+  
   哪里用得上线段树这么复杂的结构啊。一个矩阵就搞定的事 。
 
 ## 53正则匹配
@@ -840,6 +860,7 @@ map做有点过于Easy了。
 但是真的，AC得太艰难了。指针动不动就越界了。哎！
 
 - 再看看LeetCode上人家的思路。啥也别说了：
+
 - [ ] 重刷标记
 
 ## 58二叉树的中序下一个节点
@@ -851,7 +872,7 @@ map做有点过于Easy了。
 递归Easy过
 
 - [x] 书上方法不错。记得刷
-
+  
   然后发现。书上代码和我自己写的一模一样啊
 
 ## 60-61层序遍历
@@ -940,4 +961,3 @@ if(*str==*matrix){
 ```
 
 - [ ] 我并没有用回溯。就是四个方向全递归的。记得看书上做法~
-

@@ -5,13 +5,9 @@ categories: [WebSite]
 tags: [FE,Vue]
 ---
 
-
-
 <!---more--->
 
-#  [vue 组件传值](https://www.cnblogs.com/sunshine-wy/p/10819652.html)
-
- 
+# [vue 组件传值](https://www.cnblogs.com/sunshine-wy/p/10819652.html)
 
 　　我们的场景是在父组件点击按钮弹出子组件，子组件里对数据进行编辑操作以后通知父组件操作完成。弹窗效果是框架自带的，这里只说一下组件之间如何传值。
 
@@ -71,13 +67,9 @@ tags: [FE,Vue]
 
 　　到此整个组件传值就完成了，从父组件调用子组件并传递对象，到子组件完成操作以后定义事件，最后父组件对子组件的事件进行监听。
 
- 
-
 作者：[ 默卿](https://www.cnblogs.com/sunshine-wy/)
 
 出处：https://www.cnblogs.com/sunshine-wy/p/10819652.html
-
-
 
 # 子组件调用父组件的方法：
 
@@ -86,4 +78,3 @@ onChangeNav(){
     this.$parent.switchNav()
 },
 ```
-

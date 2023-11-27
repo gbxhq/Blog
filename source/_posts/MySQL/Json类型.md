@@ -5,7 +5,6 @@ categories: MySQL
 tags: [MySQL]
 ---
 
-
 JSON 类型是从 MySQL 5.7 版本开始支持的功能，而 8.0 版本解决了更新 JSON 的日志性能瓶颈。如果要在生产环境中使用 JSON 数据类型，强烈推荐使用 MySQL 8.0 版本。
 
 创建
@@ -41,8 +40,6 @@ mysql> select * from xuanshan;
 +-------------+------+
 1 row in set (0.00 sec)
 ```
-
-
 
 1. json_insert就是向json中插入，如果不存在则插入，存在则忽略
 2. json_replace就是替换json中的项，如果不存在则忽略，存在则替换

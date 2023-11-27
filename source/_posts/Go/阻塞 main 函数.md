@@ -11,17 +11,17 @@ tags: [Go,Note]
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	ticker := time.NewTicker(time.Millisecond * 1000)
-	go func() {
-		for t := range ticker.C {
-			fmt.Println("Tick at", t)
-		}
-	}()
-	select {} // select 就好
+    ticker := time.NewTicker(time.Millisecond * 1000)
+    go func() {
+        for t := range ticker.C {
+            fmt.Println("Tick at", t)
+        }
+    }()
+    select {} // select 就好
 }
 ```

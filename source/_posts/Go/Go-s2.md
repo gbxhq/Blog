@@ -5,8 +5,6 @@ categories: Note
 tags: [Go,Note]
 ---
 
-
-
 <!---more--->
 
 ## goto(跳转到指定标签)
@@ -15,21 +13,21 @@ tags: [Go,Note]
 
 ```go
 func gotoDemo1() {
-	var breakFlag bool
-	for i := 0; i < 10; i++ {
-		for j := 0; j < 10; j++ {
-			if j == 2 {
-				// 设置退出标签
-				breakFlag = true
-				break
-			}
-			fmt.Printf("%v-%v\n", i, j)
-		}
-		// 外层for循环判断
-		if breakFlag {
-			break
-		}
-	}
+    var breakFlag bool
+    for i := 0; i < 10; i++ {
+        for j := 0; j < 10; j++ {
+            if j == 2 {
+                // 设置退出标签
+                breakFlag = true
+                break
+            }
+            fmt.Printf("%v-%v\n", i, j)
+        }
+        // 外层for循环判断
+        if breakFlag {
+            break
+        }
+    }
 }
 ```
 
@@ -37,18 +35,18 @@ func gotoDemo1() {
 
 ```go
 func gotoDemo2() {
-	for i := 0; i < 10; i++ {
-		for j := 0; j < 10; j++ {
-			if j == 2 {
-				// 设置退出标签
-				goto breakTag
-			}
-			fmt.Printf("%v-%v\n", i, j)
-		}
-	}
-	return
-	// 标签
+    for i := 0; i < 10; i++ {
+        for j := 0; j < 10; j++ {
+            if j == 2 {
+                // 设置退出标签
+                goto breakTag
+            }
+            fmt.Printf("%v-%v\n", i, j)
+        }
+    }
+    return
+    // 标签
 breakTag:
-	fmt.Println("结束for循环")
+    fmt.Println("结束for循环")
 }
 ```

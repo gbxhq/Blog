@@ -97,8 +97,8 @@ fmt.Println(string([]rune(testString)[:2])) // 输出：「你好」
 testString := "Hello，世界"
 
 for i := 0; i < len(testString); i++ {
-	c := testString[i]
-	fmt.Printf("%c 的类型是 %s\n", c, reflect.TypeOf(c))
+    c := testString[i]
+    fmt.Printf("%c 的类型是 %s\n", c, reflect.TypeOf(c))
 }
 
 /* Output:
@@ -127,7 +127,7 @@ o 的类型是 uint8
 testString := "Hello，世界"
 
 for _, c := range testString {
-	fmt.Printf("%c 的类型是 %s\n", c, reflect.TypeOf(c))
+    fmt.Printf("%c 的类型是 %s\n", c, reflect.TypeOf(c))
 }
 
 /* Output:

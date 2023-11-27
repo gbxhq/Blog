@@ -9,13 +9,13 @@ tags: [Go,Note]
 
 ```go
 func f()  {
-	ans := []string{"aaa"}
-	renew(ans)
-	fmt.Printf("%v\n", ans) # [fff]
+    ans := []string{"aaa"}
+    renew(ans)
+    fmt.Printf("%v\n", ans) # [fff]
 }
 
 func renew(x []string)  {
-	x[0] = "fff"
+    x[0] = "fff"
 }
 ```
 
@@ -31,8 +31,8 @@ ans 数组会变成 "fff"，说明切片 ans 进入` renew` 方法是ans 切片�
 
 ```golang
 func f()  {
-	ans := []string{"aaa"}
-	add(&ans)
+    ans := []string{"aaa"}
+    add(&ans)
     fmt.Printf("%v\n", ans) # [aaa,new]
 }
 
@@ -40,4 +40,3 @@ func add(x *[]string)  {
     x = append(x, "new")
 }
 ```
-

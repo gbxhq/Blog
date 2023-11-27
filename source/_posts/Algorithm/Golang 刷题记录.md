@@ -10,7 +10,7 @@ tags: [Go,Algorithm]
 <!--more-->
 
 > 再刷洛谷试炼场，发现试炼场已经无了。开始以为找不到了，知乎上看到站长的回复才知道真的无了。我是从这个人整理的版本里刷的：https://www.luogu.com.cn/paste/66uuuvdr 用 Go 大概刷了 10 道题之后，放弃洛谷。原因是洛谷几乎都是 C++选手。
->
+> 
 > 继续用 Go 在 LeetCode 刷题。遇到什么写什么吧。纯纯的笔记。非专题性内容。
 
 ## 输入输出
@@ -25,17 +25,18 @@ tags: [Go,Algorithm]
 
 ```go
 func replaceSpace(s string) string {
-	var res strings.Builder
+    var res strings.Builder
     for i:=range s{
-    	if s[i]==' '{
-			res.WriteString("%20")
-		}else {
-			res.WriteByte(s[i])
-		}
-	}
-	return res.String()
+        if s[i]==' '{
+            res.WriteString("%20")
+        }else {
+            res.WriteByte(s[i])
+        }
+    }
+    return res.String()
 }
 ```
+
 - [03. 数组中重复的数字](https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/) 交换法
 
 ## 快慢指针
@@ -59,39 +60,42 @@ eg. 删除数组、链表中的重复元素
 Sum(nums[i]--nums[j]) =  preSum[j+1]-preSum[i]
 
 - 二维数组前缀和 https://leetcode-cn.com/problems/range-sum-query-2d-immutable/submissions/
-
+  
   ```go
   func Constructor(matrix [][]int) NumMatrix {
-  	l := len(matrix)+1
-  	preSum := make([][]int, l)
-  	for i:=0;i<len(preSum);i++{
-  		preSum[i] = make([]int, l)
-  		for j:=0;j<len(preSum[i]);j++ {
-  			if i == 0 || j == 0{
-  				preSum[i][j] = 0
-  				continue
-  			}
+      l := len(matrix)+1
+      preSum := make([][]int, l)
+      for i:=0;i<len(preSum);i++{
+          preSum[i] = make([]int, l)
+          for j:=0;j<len(preSum[i]);j++ {
+              if i == 0 || j == 0{
+                  preSum[i][j] = 0
+                  continue
+              }
         //注意最后这个 - 
-  			preSum[i][j] = preSum[i-1][j] + preSum[i][j-1]+ matrix[i-1][j-1] - preSum[i-1][j-1]
-  			//println(i,j,":",preSum[i-1][j],preSum[i][j-1],matrix[i-1][j-1],"-",preSum[i-1][j-1],"=",preSum[i][j])
-  		}
-  	}
-  	return NumMatrix{
-  		Matrix: matrix,
-  		PreSum: preSum,
-  	}
+              preSum[i][j] = preSum[i-1][j] + preSum[i][j-1]+ matrix[i-1][j-1] - preSum[i-1][j-1]
+              //println(i,j,":",preSum[i-1][j],preSum[i][j-1],matrix[i-1][j-1],"-",preSum[i-1][j-1],"=",preSum[i][j])
+          }
+      }
+      return NumMatrix{
+          Matrix: matrix,
+          PreSum: preSum,
+      }
   }
-  
+  ```
   
   func (this *NumMatrix) SumRegion(row1 int, col1 int, row2 int, col2 int) int {
-  	//println(this.PreSum[row2+1][col2+1] , this.PreSum[row1][col2+1] , this.PreSum[row2][col1] , this.PreSum[row1][col1])
-    // row1和 col1 都是不+1，row2 和 col2 都+1
-  	return this.PreSum[row2+1][col2+1] - this.PreSum[row1][col2+1] -
-  		this.PreSum[row2+1][col1] + this.PreSum[row1][col1]
-  }
   
-  ```
+      //println(this.PreSum[row2+1][col2+1] , this.PreSum[row1][col2+1] , this.PreSum[row2][col1] , this.PreSum[row1][col1])
+  
+    // row1和 col1 都是不+1，row2 和 col2 都+1
+  
+      return this.PreSum[row2+1][col2+1] - this.PreSum[row1][col2+1] -
+          this.PreSum[row2+1][col1] + this.PreSum[row1][col1]
+  
+  }
 
+```
 ## 差分数组
 
 **☆☆☆频繁对区间进行删减的情况☆☆☆**
@@ -102,7 +106,7 @@ Sum(nums[i]--nums[j]) =  preSum[j+1]-preSum[i]
 
 - `nums[i..j]` 都 +3 等于 `diff[i]+=3 , diff[j+1]-=3`
 
-  但是注意， nums 更新最后一个数字时，diff[j+1]会越界，所以不用再更新
+但是注意， nums 更新最后一个数字时，diff[j+1]会越界，所以不用再更新
 
 - 遍历 diff 数组即可还原 nums 数组。
 
@@ -119,8 +123,8 @@ Sum(nums[i]--nums[j]) =  preSum[j+1]-preSum[i]
 ```go
 // 关键两点
 for i<=j { //1. <=
-  m = i+1  //2, 边界 +1 / -1
-  m = j-1
+m = i+1  //2, 边界 +1 / -1
+m = j-1
 }
 ```
 
@@ -240,15 +244,15 @@ this.Lst.PushFront(ele)
 
 还有这里
 if ele.Prev() == nil {
-		//	head, update value
-			p := ele.Value.(pair)
-			p.v = value
+        //    head, update value
+            p := ele.Value.(pair)
+            p.v = value
   这里并不能改变 p 的 v 值
-		} else {
-			// remove and insert to head
-			this.Lst.Remove(ele)
-			this.InsertToHead(key, value)
-		}
+        } else {
+            // remove and insert to head
+            this.Lst.Remove(ele)
+            this.InsertToHead(key, value)
+        }
 ```
 
 ## heap
@@ -256,18 +260,16 @@ if ele.Prev() == nil {
 - 注意，heap 只是保证顶部是最小。不会保证按顺序输出是最小
 
 - 实现 interface 时只需要注意 Pop() 方法的写法 ，比如最简单的 []int 类型：
-
+  
   ```go
   func (p *PriorityQ) Pop() interface{} {
-  	n := len(*p)
-  	old := *p
-  	x := old[n-1]
-  	*p = old[:n-1]
-  	return x
+      n := len(*p)
+      old := *p
+      x := old[n-1]
+      *p = old[:n-1]
+      return x
   }
   ```
-
-  
 
 # 单调栈、单调队列
 
@@ -287,11 +289,11 @@ root.Right = x # 右指向 x 没毛病
 # x.Right = y #这样就错了
 应该是循环往下找到最右下角的节点z，把 z 的right 指向 y
 # 比如下图， root = 1， x=2, y=5，1.right=2 没毛病，但不应该 2.right=5，应该是 4.right=5
-		 1
-	/ 		\
-  2			 5
+         1
+    /         \
+  2             5
    \      \
-    3		   6
+    3           6
      \
       4
 ```
@@ -313,15 +315,15 @@ LeetCode752，我的 BFS 为啥超时呢。
 - 首先，queue队列用数组就可以实现，没必要用container 包里的 list（但这个影响也不大）
 
 - 比较重要的一点，慢的 BFS 是用了层序遍历思想，每次把同级别的符合条件的都入队，
-
+  
   其实这样也可以实现。但是这会导致什么情况：
-
+  
   - 入队的数量呈指数级别上升。比如这次入队 2 个，下次入队就这 2 个的下一种情况4 个，然后就是 8、16
-
+    
     最终就会发现队列超级长
-
+  
   而只需要每次都只取队列里的头部 1 个！1 个！1 个元素！，这样就大大降低了队列的长度。（只是循环次数会增加）
-
+  
   **但是有一说一。我只分析出这两种方案这里会不同。还是没法分析出为啥那个就可以秒出结果。**
 
 # 回溯
@@ -375,7 +377,7 @@ len(x): 3
 有最优子结构的问题：
 
 - 可以【自顶向下】，使用递归来做。拆分问题。其中递归的过程里可以使用【记忆化】的技巧，避免多次计算。
-
+  
   更进一步
 
 - 直接【自底向上】，使用一个结果数组，一步步推导上去。比如求ans[n]，我从 ans[0]开始一直求到ans[n]，反正你上面递归的方法也是一层层都求过一遍的。
@@ -387,4 +389,3 @@ go 倒序
 ```golang
 sort.Sort(sort.Reverse(sort.IntSlice(coins)))
 ```
-

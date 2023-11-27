@@ -1,4 +1,4 @@
-绿云
+# 绿云
 
 ```
 -------------------- A Bench.sh Script By Teddysun -------------------
@@ -45,10 +45,9 @@
  Finished in        : 6 min 11 sec
  Timestamp          : 2022-07-18 17:04:21 BST
 ----------------------------------------------------------------------
-
 ```
 
-# RN
+# RN 18刀 03/01/2024
 
 ```
 -------------------- A Bench.sh Script By Teddysun -------------------
@@ -99,7 +98,7 @@
 
 # Vir
 
-## 9.9$ 
+## 9.99$ 01/05/2024
 
 ```
 -------------------- A Bench.sh Script By Teddysun -------------------
@@ -148,7 +147,7 @@
 ----------------------------------------------------------------------
 ```
 
-## 8.88
+## 8.88  18刀2年  04/07/2024
 
 ```
 -------------------- A Bench.sh Script By Teddysun -------------------
@@ -197,50 +196,6 @@
 ----------------------------------------------------------------------
 ```
 
-# Huawei
+# DD 脚本
 
-```
--------------------- A Bench.sh Script By Teddysun -------------------
- Version            : v2022-06-01
- Usage              : wget -qO- bench.sh | bash
-----------------------------------------------------------------------
- CPU Model          : Intel(R) Xeon(R) Gold 6278C CPU @ 2.60GHz
- CPU Cores          : 2 @ 2600.000 MHz
- CPU Cache          : 36608 KB
- AES-NI             : Enabled
- VM-x/AMD-V         : Disabled
- Total Disk         : 39.1 GB (12.3 GB Used)
- Total Mem          : 3.9 GB (1018.9 MB Used)
- System uptime      : 835 days, 13 hour 16 min
- Load average       : 0.05, 0.06, 0.01
- OS                 : Ubuntu 18.04.3 LTS
- Arch               : x86_64 (64 Bit)
- Kernel             : 4.15.0-65-generic
- TCP CC             : cubic
- Virtualization     : Dedicated
- Organization       : AS55990 Huawei Cloud Service data center
- Location           : Beijing / CN
- Region             : Beijing
-----------------------------------------------------------------------
- I/O Speed(1st run) : 121 MB/s
- I/O Speed(2nd run) : 109 MB/s
- I/O Speed(3rd run) : 109 MB/s
- I/O Speed(average) : 113.0 MB/s
-----------------------------------------------------------------------
- Node Name        Upload Speed      Download Speed      Latency
- Speedtest.net    5.03 Mbps         164.61 Mbps         16.16 ms
- Los Angeles, US  5.30 Mbps         0.38 Mbps           174.42 ms
- Dallas, US       4.90 Mbps         0.58 Mbps           186.10 ms
- Montreal, CA     5.28 Mbps         0.38 Mbps           229.80 ms
- Paris, FR        18.56 Mbps        0.52 Mbps           177.09 ms
- Shanghai, CN     5.21 Mbps         257.03 Mbps         26.57 ms
- Nanjing, CN      6.92 Mbps         186.75 Mbps         26.51 ms
- Seoul, KR        6.73 Mbps         15.77 Mbps          153.20 ms
- Singapore, SG    4.25 Mbps         0.91 Mbps           395.39 ms
- Tokyo, JP        3.95 Mbps         0.78 Mbps           94.30 ms
-----------------------------------------------------------------------
- Finished in        : 8 min 0 sec
- Timestamp          : 2022-07-24 23:19:02 CST
-----------------------------------------------------------------------
-```
-
+https://blog.tnglu.me/dd/

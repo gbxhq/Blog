@@ -16,5 +16,3 @@ tags: [Go,Note]
 ```go
 a,b := b,a
 ```
-
-  
