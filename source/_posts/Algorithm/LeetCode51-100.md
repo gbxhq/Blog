@@ -25,38 +25,38 @@ dfs的环节是没问题的。4个参数。i是当前放旗子的行。n是棋�
 class Solution {
 bool check(int cur, vector<int>& place)
 {
-	for(int i = 0; i < cur; i++)
-	{
-		if(place[i] == place[cur] || abs(place[i]-place[cur]) == cur - i)
-			return false;
-	}
-	return true;
+    for(int i = 0; i < cur; i++)
+    {
+        if(place[i] == place[cur] || abs(place[i]-place[cur]) == cur - i)
+            return false;
+    }
+    return true;
 }
 void dfs(int cur, int n, vector<int>& place, vector<vector<string>>& ans)
 {
-	if(cur == n)
-	{
-		vector<string> curans;
-		for(int i = 0; i < n; i++)
-		{
-			string currow(n, '.');
-			currow[place[i]] = 'Q';
-			curans.push_back(currow);
-		}
-		ans.push_back(curans);
-		return;
-	}
-	if(cur < n)
-	{
-		for(int i = 0; i < n; i++)
-		{
-			place[cur] = i;
-			if(check(cur, place))
-			{
-				dfs(cur+1, n, place, ans);
-			}
-		}
-	}
+    if(cur == n)
+    {
+        vector<string> curans;
+        for(int i = 0; i < n; i++)
+        {
+            string currow(n, '.');
+            currow[place[i]] = 'Q';
+            curans.push_back(currow);
+        }
+        ans.push_back(curans);
+        return;
+    }
+    if(cur < n)
+    {
+        for(int i = 0; i < n; i++)
+        {
+            place[cur] = i;
+            if(check(cur, place))
+            {
+                dfs(cur+1, n, place, ans);
+            }
+        }
+    }
 
 }
 public:
@@ -69,9 +69,8 @@ public:
 };
 ```
 
-
-
 # 52N皇后 II
+
 # 53. 最大子序和
 
 暴力写出来了。人家怎么就想到这么写呢：
@@ -195,16 +194,27 @@ int climbStairs(int n) {
 ```
 
 # 71简化路径
+
 # 72编辑距离
+
 # 73矩阵置零
+
 # 74搜索二维矩阵
+
 # 75颜色分类
+
 # 76最小覆盖子串
+
 # 77组合
+
 # 78子集
+
 # 79单词搜索
+
 # 80删除排序数组中的重复项 II
+
 # 81搜索旋转排序数组 II
+
 # 82删除排序链表中的重复元素 II
 
 看似简单的一道题。一写就指针越界。长点心吧。
@@ -216,9 +226,13 @@ int climbStairs(int n) {
 - 删除节点光把当前节点赋NULL是不行滴。
 
 # 84柱状图中最大的矩形
+
 # 85最大矩形
+
 # 86分隔链表
+
 # 87扰乱字符串
+
 # 88合并两个有序数组
 
 🙂🙂🙂
@@ -228,7 +242,7 @@ int climbStairs(int n) {
 - 结束void函数，直接`return;`
 
 - 看了提示。从后往前插入。写出来了。速度不行。看一下这个0ms的：
-
+  
   ```cpp
   void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
       auto b1 = nums1.rbegin() + n, b2 = nums2.rbegin();
@@ -245,16 +259,27 @@ int climbStairs(int n) {
   ```
 
 # 89格雷编码
+
 # 90子集 II
+
 # 91解码方法
+
 # 92反转链表 II
+
 # 93复原IP地址
+
 # 94二叉树的中序遍历
+
 # 95不同的二叉搜索树 II
+
 # 96不同的二叉搜索树
+
 # 97交错字符串
+
 # 98验证二叉搜索树
+
 # 99恢复二叉搜索树
+
 # 100.相同的树
 
 先来看我之前写法：
@@ -296,4 +321,3 @@ bool isSameTree(TreeNode* p, TreeNode* q) {
         &&p->val==q->val;
 }//直接返回两个结果&&起来不就解决了吗。这样有一边走到了false都会返回false
 ```
-

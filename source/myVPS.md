@@ -196,6 +196,47 @@
 ----------------------------------------------------------------------
 ```
 
+# # Alpha VPS  59欧
+
+```
+-------------------- A Bench.sh Script By Teddysun -------------------
+ Version            : v2023-10-15
+ Usage              : wget -qO- bench.sh | bash
+----------------------------------------------------------------------
+ CPU Model          : AMD Ryzen 9 7900 12-Core Processor
+ CPU Cores          : 4 @ 3699.982 MHz
+ CPU Cache          : 512 KB
+ AES-NI             : ✓ Enabled
+ VM-x/AMD-V         : ✓ Enabled
+ Total Disk         : 39.3 GB (1.6 GB Used)
+ Total Mem          : 3.8 GB (249.2 MB Used)
+ Total Swap         : 1024.0 MB (0 Used)
+ System uptime      : 0 days, 0 hour 1 min
+ Load average       : 0.00, 0.00, 0.00
+ OS                 : Debian GNU/Linux 12
+ Arch               : x86_64 (64 Bit)
+ Kernel             : 6.1.0-11-amd64
+ TCP CC             : cubic
+ Virtualization     : KVM
+ IPv4/IPv6          : ✓ Online / ✓ Online
+ Organization       : AS18450 WebNX, Inc.
+ Location           : Torrance / US
+ Region             : California
+----------------------------------------------------------------------
+ I/O Speed(1st run) : 789 MB/s
+ I/O Speed(2nd run) : 846 MB/s
+ I/O Speed(3rd run) : 864 MB/s
+ I/O Speed(average) : 833.0 MB/s
+----------------------------------------------------------------------
+ Node Name        Upload Speed      Download Speed      Latency
+ Speedtest.net    939.07 Mbps       940.71 Mbps         0.86 ms
+ Los Angeles, US  917.21 Mbps       925.56 Mbps         17.17 ms
+ Dallas, US       895.40 Mbps       927.97 Mbps         37.51 ms
+ Montreal, CA     208.52 Mbps       914.27 Mbps         67.81 ms
+ Paris, FR        502.46 Mbps       944.89 Mbps         169.33 ms
+ Amsterdam, NL    534.94 Mbps       947.85 Mbps         126.58 ms
+```
+
 # DD 脚本
 
 https://blog.tnglu.me/dd/
