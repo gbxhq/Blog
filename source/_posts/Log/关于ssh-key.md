@@ -20,9 +20,9 @@ ssh-keygen -t rsa -C  'your email@domain.com'
 密钥默认保存位置在 `~/.ssh` 目录下
 
 > 如果不加`-t -C`参数，一直按回车。会生成
->
-> -   私钥文件 `id_rsa` 
-> -   公钥文件 `id_rsa.pub`
+> 
+> - 私钥文件 `id_rsa` 
+> - 公钥文件 `id_rsa.pub`
 
 # 公钥放到服务器
 
@@ -43,6 +43,3 @@ ssh-rsa ABCDABCD ixsim@MacBook-XS.lan
 如果私钥当时都没改名字(就叫`id_rsa`)，则可直接
 
 `ssh root@1.1.1.1`
-
-
-

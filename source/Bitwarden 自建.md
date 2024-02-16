@@ -59,6 +59,25 @@ services:
 
 - volumes 一定记得，要把磁盘外挂出来，方便做备份。
 
+### ADMIN_TOKEN 的坑
+
+当你 ADMIN_TOKEN 配置的是普通字符串时，会报一个安全风险：
+
+```
+[INFO] Using saved config from `data/config.json` for configuration.
+[NOTICE] You are using a plain text `ADMIN_TOKEN` which is insecure.
+Please generate a secure Argon2 PHC string by using `vaultwarden hash` or `argon2`.
+See: https://github.com/dani-garcia/vaultwarden/wiki/Enabling-admin-page#secure-the-admin_token
+```
+
+这里我们按照文档的方法，去执行一下生成 token 的命令
+
+![image-20231219131810142](https://pic.oo1.win/i/0/2023/12/19/lsrz3y-0.png)
+
+然后我在 docker compose 里修改了，发现并没有成功替换（有时候又可以，没太明白）
+
+然后搜了下，有人说在根目录下有个 config.json 文件。里面是有这个ADMIN_TOKEN，我也是尝试了。直接替换在这里。就可以了。
+
 其他的内容。我直接把楼上那个大哥写的抄过来了：
 
 ### **Vaultwarden 管理后台**

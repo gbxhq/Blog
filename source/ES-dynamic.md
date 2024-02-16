@@ -27,3 +27,14 @@
 - false 时，未知字段无法索引
 - 给未知字段新建 mapping 后，已经存在该字段的文档不会被搜出
 - 所有文档更新后，可以被搜索。但是值一定要改变才行。所以建议给新建字段后，把存量有字段的 doc 全部删掉，再统一更新一次。
+
+# 插件
+
+## 中文
+
+[简体中文语言包 - Flarum 中文社区](https://discuss.flarum.org.cn/d/1211)
+
+```
+composer require flarum-lang/chinese-simplified
+php flarum cache:clear
+```
