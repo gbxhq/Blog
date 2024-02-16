@@ -1,4 +1,16 @@
+---
+title: myVPS
+date: 2023-03-07 20:25:47
+categories:
+tags:
+---
+
+<!---more--->
+
+[【VPS各种线路】如何分辨CN2 GIA与CN2 GT？ | 爱玩实验室 (iwanlab.com)](https://iwanlab.com/cn2-gia-and-cn2-gt/)
+
 # 绿云
+
 
 ```
 -------------------- A Bench.sh Script By Teddysun -------------------
@@ -196,13 +208,18 @@
 ----------------------------------------------------------------------
 ```
 
+<<<<<<< Updated upstream
 # # Alpha VPS  59欧
+=======
+# ccs 13刀
+>>>>>>> Stashed changes
 
 ```
 -------------------- A Bench.sh Script By Teddysun -------------------
  Version            : v2023-10-15
  Usage              : wget -qO- bench.sh | bash
 ----------------------------------------------------------------------
+<<<<<<< Updated upstream
  CPU Model          : AMD Ryzen 9 7900 12-Core Processor
  CPU Cores          : 4 @ 3699.982 MHz
  CPU Cache          : 512 KB
@@ -240,3 +257,36 @@
 # DD 脚本
 
 https://blog.tnglu.me/dd/
+=======
+ CPU Model          : Intel(R) Xeon(R) CPU E5-2670 v2 @ 2.50GHz
+ CPU Cores          : 1 @ 2499.998 MHz
+ CPU Cache          : 25600 KB
+ AES-NI             : ✓ Enabled
+ VM-x/AMD-V         : ✗ Disabled
+ Total Disk         : 29.5 GB (1.3 GB Used)
+ Total Mem          : 1.9 GB (228.1 MB Used)
+ Total Swap         : 2.5 GB (0 Used)
+ System uptime      : 1 days, 0 hour 18 min
+ Load average       : 0.00, 0.00, 0.00
+ OS                 : Debian GNU/Linux 12
+ Arch               : x86_64 (64 Bit)
+ Kernel             : 6.1.0-9-amd64
+ TCP CC             : cubic
+ Virtualization     : KVM
+ IPv4/IPv6          : ✓ Online / ✗ Offline
+ Organization       : AS36352 ColoCrossing
+ Location           : Los Angeles / US
+ Region             : California
+----------------------------------------------------------------------
+ I/O Speed(1st run) : 638 MB/s
+ I/O Speed(2nd run) : 649 MB/s
+ I/O Speed(3rd run) : 393 MB/s
+ I/O Speed(average) : 560.0 MB/s
+----------------------------------------------------------------------
+ Node Name        Upload Speed      Download Speed      Latency
+ Speedtest.net    991.92 Mbps       937.97 Mbps         0.37 ms
+ Los Angeles, US  994.39 Mbps       942.23 Mbps         0.98 ms
+```
+
+# dmit 125刀
+>>>>>>> Stashed changes
