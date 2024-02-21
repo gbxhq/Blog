@@ -317,3 +317,9 @@ docker images
 比如上面例子中，`TAG` 为 `<none>` 的便是老版本镜像，删除它
 
 docker rmi 8af25c1e7832
+
+
+
+# 推荐阅读
+
+[分享一下我自建bitwarden及进阶使用、备份的经验吧……比较杂乱 (nodeseek.com)](https://www.nodeseek.com/post-14368-1)
